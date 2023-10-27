@@ -18,7 +18,7 @@ const AboutUs = () => {
           className="absolute"
           style={{
             width: "130%",
-          }}
+          }}  
         >
           <h2
             className="

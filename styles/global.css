@@ -32,7 +32,7 @@
 
 .main:after {
   content: "";
-  background-image: url("/assets/images/grid.svg");
+  /* background-image: url("/assets/images/grid.jpg"); */
   z-index: 1;
   position: absolute;
   width: 100%;
@@ -70,5 +70,39 @@
 @media screen and (max-width: 640px) {
   .main {
     padding: 0;
+  }
+}
+
+.gallery-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 1023px) {
+  .gallery-container div{
+    margin: 10px;
+  }
+}
+
+@media screen and (min-width: 640px) and (max-width: 1024px) {
+  .gallery-container {
+    flex-direction: row;
+  }
+  .gallery-container-two{
+    max-width: 60%;
+  }
+
+}
+
+@media screen and (min-width: 1024px) {
+  .gallery-container-one{
+    margin-right: 60%;
+    margin-left: -20%;
+  }
+  .gallery-container-three{
+    margin-left: 60%;
+    margin-right: -20%;
   }
 }

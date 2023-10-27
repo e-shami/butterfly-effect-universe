@@ -3,7 +3,7 @@ import "@styles/global.css";
 import Image from "next/image";
 import "@styles/global.css";
 
-export const Gallery = () => {
+const Gallery = () => {
   return (
     <div className="flex flex-col justify-center items-center w-full my-2">
       <h2 className="text-xl font-medium text-sky-900 py-2 lg:mb-10">
@@ -37,3 +37,5 @@ export const Gallery = () => {
     </div>
   );
 };
+
+export default Gallery;

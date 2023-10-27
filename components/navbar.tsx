@@ -58,7 +58,7 @@ const Navbar = () => {
       </nav>
 
       {/* "Invest Today" button */}
-      <div className="flex justify-between px-4 items-center border border-2 border-teal-500 p-2 md:w-40 md:rounded-lg text-teal-500 group hover:bg-teal-500 hover:text-white">
+      <div className="flex justify-between px-4 items-center border border-2 border-teal-500 p-2 md:w-40 rounded-lg text-teal-500 group hover:bg-teal-500 hover:text-white ">
   <Link href="/donate" className="font-medium">
     Invest Today
   </Link>

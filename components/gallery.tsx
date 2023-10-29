@@ -5,7 +5,7 @@ import "@styles/global.css";
 
 const Gallery = () => {
   return (
-    <div className="flex flex-col justify-center items-center w-full my-2">
+    <div className="flex flex-col justify-center items-center w-full my-2 h-screen">
       <h2 className="text-xl font-medium text-sky-900 py-2 lg:mb-10">
         Project Gallery
       </h2>

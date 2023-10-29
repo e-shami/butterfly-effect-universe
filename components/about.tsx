@@ -2,7 +2,7 @@ import React from "react";
 
 const AboutUs = () => {
   return (
-    <div className="h-screen flex-row text-center justify-center align-middle">
+    <div className="h-screen flex-row text-center justify-center align-middle mb-60 ">
       <div
         style={{
           height: "110vh",
@@ -17,7 +17,7 @@ const AboutUs = () => {
         <div
           className="absolute"
           style={{
-            width: "130%",
+            width: "125%",
           }}  
         >
           <h2
@@ -29,7 +29,7 @@ const AboutUs = () => {
           </h2>
           <div
             style={{
-              height: "50vh",
+              height: "auto",
               width: "50%",
               position: "absolute",
               background: "#ffffffbf",
@@ -107,19 +107,19 @@ const AboutUs = () => {
         <div
           style={{
             height: "100vh",
-            width: "90%",
+            width: "80%",
             position: "absolute",
             backgroundImage: "url('/assets/images/lib1.jpg')",
             border: "1px solid #fff",
             // boxShadow: "2px 4px 6px 3px #dbdbdb",
             marginTop: "10%",
             justifySelf: "center",
-            borderRadius: "50px",
-            right: "-30%",
+            borderRadius: "50px 0 0 50px",
+            right: "-25%",
             boxShadow: "0px 0px 6px 1px #dbdbdb",
             zIndex: 0,
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "contain",
+            // backgroundRepeat: "no-repeat",
+            backgroundSize: "fill",
           }}
         ></div>
       </div>

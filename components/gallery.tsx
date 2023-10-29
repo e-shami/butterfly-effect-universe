@@ -1,11 +1,10 @@
 import React from "react";
 import "@styles/global.css";
-import Image from "next/image";
 import "@styles/global.css";
 
 const Gallery = () => {
   return (
-    <div className="flex flex-col justify-center items-center w-full my-2">
+    <div className="flex flex-col justify-center items-center w-full my-10 lg:my-16">
       <h2 className="text-xl font-medium text-sky-900 py-2 lg:mb-10">
         Project Gallery
       </h2>

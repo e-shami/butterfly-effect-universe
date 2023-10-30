@@ -1,48 +1,200 @@
-import React from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 import "@styles/global.css";
-import "@styles/global.css";
-import { Grid } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import { CardActionArea, ImageList, ImageListItem } from "@mui/material";
+
+const ActionAreaCard = ({
+  item,
+}: {
+  item: { img: string; title: string; description: string };
+}) => (
+  <Card
+    sx={{
+      maxWidth: 435,
+      borderRadius: "8px",
+      borderBlockColor: "rgb(94, 234, 212)",
+      borderWidth: "2.5px",
+      borderStyle: "ridge",
+    }}
+  >
+    <CardActionArea>
+      <CardMedia
+        component="img"
+        width="140"
+        height="140"
+        image={item.img}
+        alt={item.title}
+      />
+      <CardContent>
+        <Typography
+          gutterBottom
+          variant="h5"
+          component="div"
+          style={{
+            fontFamily: "Roboto",
+            fontWeight: "Medium",
+            color: "#526092",
+          }}
+        >
+          {item.title}
+        </Typography>
+        <Typography variant="body2" color="rgba(82, 96, 146, 0.6)">
+          {item.description}
+        </Typography>
+      </CardContent>
+    </CardActionArea>
+  </Card>
+);
+
+interface ItemData {
+  img: string;
+  title: string;
+  description: string;
+}
+
+const itemData : ItemData[] = [
+  {
+    img: "/assets/images/gallery/image1.png",
+    title: "Picture Title",
+    description: "Picture Description",
+  },
+  {
+    img: "/assets/images/gallery/image2.jpg",
+    title: "Picture Title",
+    description: "Picture Description",
+  },
+  {
+    img: "/assets/images/gallery/image3.png",
+    title: "Picture Title",
+    description: "Picture Description",
+  },
+  {
+    img: "/assets/images/gallery/image4.png",
+    title: "Picture Title",
+    description: "Picture Description",
+  },
+  {
+    img: "/assets/images/gallery/image5.jpg",
+    title: "Picture Title",
+    description: "Picture Description",
+  },
+  {
+    img: "/assets/images/gallery/image1.png",
+    title: "Picture Title",
+    description: "Picture Description",
+  },
+
+  // Add other image details here
+];
+
+const ImageListWithCards = ({ itemData, columns }: { itemData: ItemData[]; columns: number }) => (
+  <ImageList
+    variant="masonry"
+    cols={columns}
+    gap={columns == 3 ? 30 : 10}
+    sx={{ maxWidth: "95%" }}
+  >
+    {itemData.map((item) => (
+      <ImageListItem key={item.img}>
+        <ActionAreaCard item={item} />
+      </ImageListItem>
+    ))}
+  </ImageList>
+);
+
+// Your itemData array with image details
+
+// Use the ImageListWithCards component
 
 const Gallery = () => {
-  return (
-    <Grid container justifyContent="center" alignItems="center" sx={{
-      "@media (max-width: 600px)": {
-        height: 'fit-content',
-        // marginTop: '40vh',
-        // marginBottom: '80%',
-      },
-    }}>
-    <div className="flex flex-col justify-center items-center w-full my-2 h-screen">
-      <h2 className="text-xl font-medium text-sky-900 py-2 lg:mb-10">
-        Project Gallery
-      </h2>
+  const [columns, setColumns] = useState(3);
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 place-items-center lg:bg-teal-200 lg:w-8/12 lg:h-72 w-full rounded-lg lg:shadow my-10 items-center h-auto">
-        <div className="w-full gallery-container gallery-container-one" >
-          <div className="w-3/4 lg:w-80 xl:w-96 bg-sky-100 h-48 border border-gray-200 rounded-lg shadow lg:-mt-20">
-            <img src="/assets/images/gallery/image1.png" alt="" className="w-full h-full rounded-lg"/>
-          </div>
-          <div className="w-3/4 lg:w-80 xl:w-96 bg-sky-100 h-48 border border-gray-200 rounded-lg shadow lg:mt-16 lg:-mb-20">
-          <img src="/assets/images/gallery/image2.jpg" alt="" className="w-full h-full rounded-lg"/>
-            
-          </div>
-        </div>
-        <div className="w-full gallery-container gallery-container-two">
-          <div className="w-3/4 lg:w-80 xl:w-96 bg-sky-100 lg:h-40 h-48 border border-gray-200 rounded-lg shadow">
-          <img src="/assets/images/gallery/image3.png" alt="" className="w-full h-full rounded-lg"/>
-          </div>
-        </div>
-        <div className="w-full gallery-container gallery-container-three">
-          <div className="w-3/4 lg:w-80 xl:w-96 bg-sky-100 h-48 border border-gray-200 rounded-lg shadow lg:-mt-20">
-          <img src="/assets/images/gallery/image4.png" alt="" className="w-full h-full rounded-lg"/>
-          </div>
-          <div className="w-3/4 lg:w-80 xl:w-96 bg-sky-100 h-48 border border-gray-200 rounded-lg shadow lg:mt-16 lg:-mb-20">
-          <img src="/assets/images/gallery/image5.jpg" alt="" className="w-full h-full rounded-lg"/>
-          </div>
-        </div>
-      </div>
-    </div>
+  useEffect(() => {
+    const updateColumns = () => {
+      const screenWidth = window.innerWidth;
+      if (screenWidth >= 1024) {
+        setColumns(3); // Desktop mode
+      } else {
+        setColumns(2);
+      }
+    };
+
+    updateColumns();
+
+    // Update columns on window resize
+    window.addEventListener("resize", updateColumns);
+
+    return () => {
+      // Cleanup event listener
+      window.removeEventListener("resize", updateColumns);
+    };
+  }, []);
+  return (
+    <Grid
+      container
+      sx={{
+        position: "relative",
+        justifyContent: "center",
+        alignContent: "center",
+
+        "@media (max-width: 600px)": {
+          height: "fit-content",
+        },
+      }}
+    >
+      <Grid
+        item
+        xs={12}
+        sm={12}
+        md={12}
+        sx={{
+          display: "flex",
+          alignItems: "start",
+          alignContent: "start",
+          paddingX: "50px",
+
+          "@media (max-width: 600px)": {
+            height: "fit-content",
+          },
+
+          "@media (min-width:1024px)": {
+            marginY: "10rem",
+            height: "fit-content",
+          },
+        }}
+      >
+        <Typography
+          variant="h2"
+          sx={{
+            color: "#526092",
+            textAlign: "center",
+            fontSize: 38,
+            fontWeight: 600,
+            textTransform: "capitalize",
+            marginBottom: "2rem",
+            alignSelf: "flex-start",
+            display: "flex",
+            padding: "30px",
+            flexDirection: "column",
+            width: "100%",
+            position: "absolute",
+
+            "@media (max-width: 600px)": {
+              fontSize: 28,
+              marginBottom: "0",
+              position: "relative",
+            },
+          }}
+        >
+          Project Gallery
+        </Typography>
       </Grid>
+      <ImageListWithCards itemData={itemData} columns={columns} />
+    </Grid>
   );
 };
 

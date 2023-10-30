@@ -1,6 +1,5 @@
 import React from "react";
 import "@styles/global.css";
-import Image from "next/image";
 import "@styles/global.css";
 
 const Gallery = () => {

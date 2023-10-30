@@ -3,6 +3,7 @@ import AboutUs from "@components/about";
 import Hero from "@components/hero";
 import Footer from "@components/footer";
 import React from "react";
+import Contact from '@components/contact'
 
 export default function page() {
   return (
@@ -10,6 +11,7 @@ export default function page() {
       <Hero />
       <AboutUs />
       <Gallery />
+      <Contact />
       <Footer />
     </div>
   );

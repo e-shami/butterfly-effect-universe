@@ -156,14 +156,10 @@ const Gallery = () => {
           alignItems: "start",
           alignContent: "start",
           paddingX: "50px",
-
-          "@media (max-width: 600px)": {
-            height: "fit-content",
-          },
+          height: "fit-content",
 
           "@media (min-width:1024px)": {
-            marginY: "10rem",
-            height: "fit-content",
+            marginTop: "10rem",
           },
         }}
       >
@@ -181,7 +177,6 @@ const Gallery = () => {
             padding: "30px",
             flexDirection: "column",
             width: "100%",
-            position: "absolute",
 
             "@media (max-width: 600px)": {
               fontSize: 28,

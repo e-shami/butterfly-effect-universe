@@ -11,7 +11,7 @@ import Image from "next/image";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    backgroundImage: `url(${contactImage.src})`,
+    backgroundImage: `url(${contactImage.src}) !important`,
     backgroundSize: "cover",
     backgroundPosition: "center",
     // backgroundColor: "grey",
@@ -20,6 +20,11 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
     marginTop: theme.spacing(12),
+
+    "@media (max-width: 600px)": {
+      height: "fit-content",
+      marginTop: theme.spacing(30),
+    },
   },
   formContainer: {
     display: "flex",
@@ -40,6 +45,18 @@ const Contact = () => {
 
   return (
     <div className={classes.root}>
+        {/* <Image
+                src={contactImage.src}
+                alt="contact"
+                width={500}
+                height={500}
+                style={{
+                    position: 'absolute',
+                    height: '100%',
+                    width: '100%',
+                    zIndex: -1,
+                }}
+            /> */}
       <Grid container className={classes.formContainer}>
             <Image
                 src={contactImage.src}

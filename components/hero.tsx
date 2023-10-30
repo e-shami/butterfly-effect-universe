@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const Hero = () => {
   const heroSectionStyle = {
-    backgroundImage: `url(${lib6.src})`,
+    backgroundImage: `url(${lib6.src}) !important`,
     backgroundSize: "cover",
     backgroundPosition: "center",
     backgroundAttachment: "fixed",
@@ -22,7 +22,7 @@ const Hero = () => {
     borderRadius: "30px",
     padding: "2.5rem",
     border: "1px solid #fff",
-    boxShadow: "0px 0px 6px 1px #dbdbdb",
+    boxShadow: "0px 0px 6px 1px rgba(0,0,0,0.75)",
 
     "@media (max-width: 600px)": {
       padding: "0.5rem",
@@ -57,7 +57,7 @@ const Hero = () => {
   return (
         <Grid container justifyContent="center" alignItems="center" sx={heroSectionStyle}>
           
-          <Image
+          {/* <Image
                 src={lib6.src}
                 alt="contact"
                 width={500}
@@ -68,7 +68,7 @@ const Hero = () => {
                     width: '100%',
                     zIndex: -1,
                 }}
-            />
+            /> */}
           <Grid item xs={10} sm={8} md={6}>
             <Paper style={heroContentStyle}>
               <Typography variant="h2" sx={heroH1Style}>

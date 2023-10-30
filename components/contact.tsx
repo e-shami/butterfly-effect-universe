@@ -20,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
     marginTop: theme.spacing(12),
+    backgroundAttachment: "fixed",
 
     "@media (max-width: 600px)": {
       height: "fit-content",
@@ -58,7 +59,7 @@ const Contact = () => {
                 }}
             /> */}
       <Grid container className={classes.formContainer}>
-            <Image
+            {/* <Image
                 src={contactImage.src}
                 alt="contact"
                 width={500}
@@ -69,7 +70,7 @@ const Contact = () => {
                     width: '100%',
                     zIndex: -1,
                 }}
-            />
+            /> */}
         <Grid
           item
           xs={12}

@@ -24,7 +24,6 @@ const useStyles = makeStyles((theme) => ({
 
     "@media (max-width: 600px)": {
       height: "fit-content",
-      marginTop: theme.spacing(30),
     },
   },
   formContainer: {

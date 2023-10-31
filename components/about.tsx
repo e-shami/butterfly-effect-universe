@@ -2,6 +2,7 @@ import React from "react";
 import { Grid, Paper, Typography, Link } from "@mui/material";
 import Image from "next/image";
 import lib1 from "../public/assets/images/lib1.jpg";
+import mission from "../public/assets/images/mission.jpg";
 import EastIcon from "@mui/icons-material/East";
 
 const AboutUs = () => {
@@ -11,7 +12,7 @@ const AboutUs = () => {
       sx={{
         position: "relative",
         zIndex: -1,
-        height: "150vh",
+        height: "130vh",
         "@media (max-width: 600px)": {
           height: "fit-content",
         },
@@ -27,9 +28,11 @@ const AboutUs = () => {
           display: "flex",
           alignItems: "start",
           alignContent: "start",
+          marginBottom: "5vh",
 
           "@media (max-width: 600px)": {
             height: "fit-content",
+            marginBottom: "0",
           },
         }}
       >
@@ -62,12 +65,12 @@ const AboutUs = () => {
 
       <Grid
         item
-        xs={12}
-        sm={12}
+        xs={0}
+        sm={0}
         md={10}
         sx={{
           height: "120vh",
-          width: "90%",
+          width: "100%",
           position: "absolute",
           backgroundColor: "#c1e5e0",
           border: "1px solid #fff",
@@ -75,17 +78,23 @@ const AboutUs = () => {
           display: "flex",
           flexDirection: "column",
           zIndex: -1,
+          borderRadius: "0 0 50px 0",
 
-          "@media (max-width: 600px)": {
-            height: "fit-content",
+          "@media (max-width: 960px)": {
+            height: "120vh",
           },
+          
+          "@media (max-width: 600px)": {
+            height: "85vh",
+          },
+
         }}
       ></Grid>
 
       <Grid
         item
         xs={12}
-        sm={12}
+        sm={8}
         md={6}
         sx={{
           display: "flex",
@@ -94,9 +103,13 @@ const AboutUs = () => {
           alignContent: "center",
           justifyContent: "center",
           justifyItems: "center",
-          height: "80vh",
+          height: "100vh",
           zIndex: 1,
           position: "relative",
+
+          "@media (max-width: 960px)": {
+            flexDirection: "column-reverse",
+          },
 
           "@media (max-width: 600px)": {
             height: "fit-content",
@@ -118,8 +131,9 @@ const AboutUs = () => {
             width: "80%",
             boxShadow: '0px 0px 10px 0px rgba(0,0,0,0.75)',
             height: 'fit-content',
+            position: "relative",
             // below md
-            "@media (max-width: 960px)": {
+            "@media (max-width: 600px)": {
               marginRight: "0",
             },
           }}
@@ -138,7 +152,7 @@ const AboutUs = () => {
               flexDirection: "column",
               width: "100%",
 
-              "@media (max-width: 960px)": {
+              "@media (max-width: 600px)": {
                 fontSize: 24,
                 marginBottom: "0.5rem",
               },
@@ -159,7 +173,7 @@ const AboutUs = () => {
               flexDirection: "column",
               width: "100%",
 
-              "@media (max-width: 960px)": {
+              "@media (max-width: 600px)": {
                 fontSize: 14,
                 marginBottom: "0.5rem",
               },
@@ -190,6 +204,7 @@ const AboutUs = () => {
               "@media (max-width: 600px)": {
                 fontSize: 14,
                 padding: "0.4rem",
+                alignSelf: "flex-end",
               },
             }}
           >
@@ -215,7 +230,7 @@ const AboutUs = () => {
       <Grid
         item
         xs={12}
-        sm={12}
+        sm={4}
         md={6}
         sx={{
           display: "flex",
@@ -225,7 +240,9 @@ const AboutUs = () => {
           height: "100vh",
           position: "relative",
           // below md
-          "@media (max-width: 960px)": {
+
+
+          "@media (max-width: 600px)": {
             display: "none",
             height: "fit-content",
           },
@@ -248,16 +265,25 @@ const AboutUs = () => {
             display: "flex",
             justifyContent: "end",
             boxShadow: "0px 0px 6px 1px #dbdbdb",
-            backgroundImage: `url(${lib1.src}) !important`,
+            backgroundImage: `url(${mission.src}) !important`,
             backgroundAttachment: "fixed",
             position: "relative",
+            background: "left",
 
             // below md
             "@media (max-width: 960px)": {
-              height: "100vh",
+              height: "auto",
               width: "100%",
-              position: "relative",
+              // marginTop: "-90vh",
+              // borderRadius: 0,
+              zIndex: -1,
             },
+
+            "@media (max-width: 600px)": {
+              display: 'none',
+            },
+
+
           }}
         >
           {/* <Image

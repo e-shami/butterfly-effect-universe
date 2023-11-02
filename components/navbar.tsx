@@ -30,6 +30,33 @@ const screen = {
 function ResponsiveAppBar() {
   const theme = useTheme();
 
+  const [deviceScreen, setDeviceScreen] = React.useState({
+    width: 0,
+    height: 0,
+  });
+
+  React.useEffect(() => {
+    const updateDeviceScreen = () => {
+      const screenWidth = window.innerWidth;
+      const screenHeight = window.innerHeight;
+
+      setDeviceScreen({
+        width: screenWidth,
+        height: screenHeight,
+      })
+    };
+
+    updateDeviceScreen();
+
+    // Update columns on window resize
+    window.addEventListener("resize", updateDeviceScreen);
+
+    return () => {
+      // Cleanup event listener
+      window.removeEventListener("resize", updateDeviceScreen);
+    };
+  }, []);
+
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
@@ -62,12 +89,12 @@ function ResponsiveAppBar() {
               src="/assets/images/logo.svg"
               alt="Butterfly Effect Logo"
               width={
-                window.innerWidth < screen.sm && window.innerWidth < screen.md
+                deviceScreen.width < screen.sm && deviceScreen.width < screen.md
                   ? 120
                   : 140
               }
               height={
-                window.innerWidth < screen.sm && window.innerWidth < screen.md
+                deviceScreen.width < screen.sm && deviceScreen.width < screen.md
                   ? 120
                   : 140
               }
@@ -127,12 +154,12 @@ function ResponsiveAppBar() {
               src="/assets/images/logo.svg"
               alt="Butterfly Effect Logo"
               width={
-                window.innerWidth <= screen.sm && window.innerHeight < 678
+                deviceScreen.width <= screen.sm && deviceScreen.height < 678
                   ? 100
                   : 150
               }
               height={
-                window.innerWidth <= screen.sm && window.innerHeight < 678
+                deviceScreen.width <= screen.sm && deviceScreen.height   < 678
                   ? 100
                   : 150
               }

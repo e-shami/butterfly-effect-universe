@@ -1,6 +1,6 @@
 import React from "react";
 import { Grid, Paper, Typography } from "@mui/material";
-import lib6 from "../public/assets/images/lib7.jpg";
+import lib6 from "../public/assets/images/a.jpg";
 import Image from "next/image";
 
 const Hero = () => {
@@ -10,7 +10,7 @@ const Hero = () => {
     backgroundPosition: "center",
     backgroundAttachment: "fixed",
     backgroundRepeat: "no-repeat",
-    height: "100vh",
+    height: "120vh",
 
     "@media (max-width: 600px)": {
       // height: "fit-content",

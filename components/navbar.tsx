@@ -49,27 +49,27 @@ function ResponsiveAppBar() {
 
   return (
     <AppBar
-      position="absolute"
+      position="fixed"
       sx={{
         backgroundColor: "rgba(255, 255, 255, 0.6)",
         backdropFilter: "blur(5px)",
       }}
     >
       <Container maxWidth="xl" sx={{ backgroundColor: "transparent" }}>
-        <Toolbar disableGutters sx={{ backgroundColor: "transparent" }}>
+        <Toolbar disableGutters sx={{ backgroundColor: "transparent", height: "85px" }}>
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <Image
               src="/assets/images/logo.svg"
               alt="Butterfly Effect Logo"
               width={
                 window.innerWidth < screen.sm && window.innerWidth < screen.md
-                  ? 150
-                  : 180
+                  ? 120
+                  : 140
               }
               height={
                 window.innerWidth < screen.sm && window.innerWidth < screen.md
-                  ? 150
-                  : 180
+                  ? 120
+                  : 140
               }
             />
           </Box>

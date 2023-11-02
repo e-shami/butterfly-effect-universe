@@ -159,7 +159,7 @@ const Gallery = () => {
           height: "fit-content",
 
           "@media (min-width:1024px)": {
-            marginTop: "10rem",
+            // marginTop: "10rem",
           },
         }}
       >

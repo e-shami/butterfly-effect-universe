@@ -44,7 +44,7 @@ const Contact = () => {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
+    <div id="contactUs" className={classes.root}>
         {/* <Image
                 src={contactImage.src}
                 alt="contact"

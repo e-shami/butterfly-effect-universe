@@ -2,21 +2,22 @@ import React from "react";
 import { Grid, Paper, Typography, Link } from "@mui/material";
 import Image from "next/image";
 import lib1 from "../public/assets/images/lib1.jpg";
-import mission from "../public/assets/images/mission.jpg";
+import mission from "../public/assets/images/b.jpg";
 import EastIcon from "@mui/icons-material/East";
 
 const AboutUs = () => {
   return (
     <Grid
-      container
-      sx={{
-        position: "relative",
-        zIndex: -1,
-        height: "130vh",
-        "@media (max-width: 600px)": {
-          height: "fit-content",
-        },
-      }}
+    container
+    id = "about"
+    sx={{
+      position: "relative",
+      zIndex: -1,
+      height: "130vh",
+      "@media (max-width: 600px)": {
+        height: "fit-content",
+      },
+    }}
     >
       {/* Heading */}
       <Grid
@@ -266,9 +267,8 @@ const AboutUs = () => {
             justifyContent: "end",
             boxShadow: "0px 0px 6px 1px #dbdbdb",
             backgroundImage: `url(${mission.src}) !important`,
-            backgroundAttachment: "fixed",
+            backgroundAttachment: "fixed !important",
             position: "relative",
-            background: "left",
 
             // below md
             "@media (max-width: 960px)": {

@@ -1,5 +1,5 @@
 import '@styles/global.css'
-import navbar from '@components/navbar'
+import Navbar from '@components/navbar'
 
 export const metadeta = {
     title: 'Butterfly Effect Universe',
@@ -10,7 +10,7 @@ const RootLayout = ({children}: {children: React.ReactNode}) => {
   return (
     <html lang='en-US'>
         <body>
-            {navbar()}
+            <Navbar />
 
             <div className='main'>
                 <div className='gradient'/>

@@ -18,7 +18,6 @@ const useStyles = makeStyles((theme) => ({
     height: "100vh",
     display: "flex",
     justifyContent: "center",
-    alignItems: "center",
     marginTop: theme.spacing(12),
     backgroundAttachment: "fixed",
 
@@ -45,31 +44,7 @@ const Contact = () => {
 
   return (
     <div id="contactUs" className={classes.root}>
-        {/* <Image
-                src={contactImage.src}
-                alt="contact"
-                width={500}
-                height={500}
-                style={{
-                    position: 'absolute',
-                    height: '100%',
-                    width: '100%',
-                    zIndex: -1,
-                }}
-            /> */}
       <Grid container className={classes.formContainer}>
-            {/* <Image
-                src={contactImage.src}
-                alt="contact"
-                width={500}
-                height={500}
-                style={{
-                    position: 'absolute',
-                    height: '100%',
-                    width: '100%',
-                    zIndex: -1,
-                }}
-            /> */}
         <Grid
           item
           xs={12}

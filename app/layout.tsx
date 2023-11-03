@@ -1,5 +1,10 @@
 import '@styles/global.css'
 import Navbar from '@components/navbar'
+import { Suspense } from 'react'
+import {
+  CircularProgress,
+} from "@mui/material";
+import Loader from '@components/loader';
 
 export const metadeta = {
     title: 'Butterfly Effect Universe',
@@ -9,7 +14,13 @@ export const metadeta = {
 const RootLayout = ({children}: {children: React.ReactNode}) => {
   return (
     <html lang='en-US'>
+        <head>
+            <title>Butterfly Effect Universe</title>
+            <link rel="icon" href="/assets/images/logo2.svg" />
+        </head>
         <body>
+            <Suspense fallback={<Loader />} >
+
             <Navbar />
 
             <div className='main'>
@@ -19,6 +30,7 @@ const RootLayout = ({children}: {children: React.ReactNode}) => {
             <main>
                 {children}
             </main>
+            </Suspense>
         </body>
     </html>
   )

@@ -12,9 +12,6 @@ const Hero = () => {
     backgroundRepeat: "no-repeat",
     height: "120vh",
 
-    "@media (max-width: 600px)": {
-      // height: "fit-content",
-    },
   };
   
   const heroContentStyle = {

@@ -86,17 +86,17 @@ function ResponsiveAppBar() {
         <Toolbar disableGutters sx={{ backgroundColor: "transparent", height: "85px" }}>
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <Image
-              src="/assets/images/logo.svg"
+              src="/assets/images/logo2.svg"
               alt="Butterfly Effect Logo"
               width={
                 deviceScreen.width < screen.sm && deviceScreen.width < screen.md
-                  ? 120
-                  : 140
+                  ? 80
+                  : 100
               }
               height={
                 deviceScreen.width < screen.sm && deviceScreen.width < screen.md
-                  ? 120
-                  : 140
+                  ? 80
+                  : 100
               }
             />
           </Box>
@@ -151,17 +151,17 @@ function ResponsiveAppBar() {
           </Box>
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <Image
-              src="/assets/images/logo.svg"
+              src="/assets/images/logo2.svg"
               alt="Butterfly Effect Logo"
               width={
                 deviceScreen.width <= screen.sm && deviceScreen.height < 678
-                  ? 100
-                  : 150
+                  ? 80
+                  : 100
               }
               height={
                 deviceScreen.width <= screen.sm && deviceScreen.height   < 678
-                  ? 100
-                  : 150
+                  ? 80
+                  : 100
               }
             />
           </Box>

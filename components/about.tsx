@@ -262,13 +262,15 @@ const AboutUs = () => {
             width: "100%",
             borderRadius: "50px 0 0 50px",
             zIndex: 1,
-            backgroundSize: "cover",
+            // backgroundSize: "cover",
             display: "flex",
-            justifyContent: "end",
+            // justifyContent: "end",
             boxShadow: "0px 0px 6px 1px #dbdbdb",
             backgroundImage: `url(${mission.src}) !important`,
-            backgroundAttachment: "fixed !important",
+            // backgroundAttachment: "fixed !important",
             position: "relative",
+            backgroundPosition: "bottom !important",
+            backgroundSize: "cover !important",
 
             // below md
             "@media (max-width: 960px)": {

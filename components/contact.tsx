@@ -14,7 +14,6 @@ const useStyles = makeStyles((theme) => ({
     backgroundImage: `url(${contactImage.src}) !important`,
     backgroundSize: "cover",
     backgroundPosition: "center",
-    // backgroundColor: "grey",
     height: "100vh",
     display: "flex",
     justifyContent: "center",

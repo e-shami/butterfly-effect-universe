@@ -128,7 +128,7 @@ const Footer = () => {
       <div className="flex flex-col w-11/12 lg:mt-4 justify-center">
         <hr className="w-full text-white my-4 " />
 
-        <p className="text-white font-regular font-inter md:text-md lg:text-xl mx-4 mb-4">
+        <p className="text-white font-regular font-inter md:text-md lg:text-xl mx-4 mb-4 text-center">
           © Copyright reserved for Butterfly Effect @2023
         </p>
       </div>

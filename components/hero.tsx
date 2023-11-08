@@ -1,6 +1,6 @@
 import React from "react";
 import { Grid, Paper, Typography } from "@mui/material";
-import lib6 from "../public/assets/images/a.jpg";
+import lib6 from "../public/assets/images/hero.jpg";
 import Image from "next/image";
 
 const Hero = () => {

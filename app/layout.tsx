@@ -1,9 +1,6 @@
 import '@styles/global.css'
 import Navbar from '@components/navbar'
 import { Suspense } from 'react'
-import {
-  CircularProgress,
-} from "@mui/material";
 import Loader from '@components/loader';
 
 export const metadeta = {
@@ -20,7 +17,7 @@ const RootLayout = ({children}: {children: React.ReactNode}) => {
         </head>
         <body>
             <Suspense fallback={<Loader />} >
-
+          
             <Navbar />
 
             <div className='main'>

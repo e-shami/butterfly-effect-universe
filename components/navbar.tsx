@@ -3,244 +3,156 @@
 import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
+import Divider from "@mui/material/Divider";
+import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
-import LaunchIcon from "@mui/icons-material/Launch";
-import Container from "@mui/material/Container";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import MenuItem from "@mui/material/MenuItem";
-import Link from "next/link";
+import LaunchIcon from "@mui/icons-material/Launch";
 import Image from "next/image";
-import { useTheme } from "@mui/material/styles";
 
-const pages = [
-  { navName: "Home", path: "/" },
-  { navName: "About", path: "/#about" },
-  { navName: "Contact Us", path: "/#contactUs" },
-];
-const screen = {
-  sm: 600,
-  md: 900,
-  lg: 1200,
-  xl: 1536,
-};
-function ResponsiveAppBar() {
-  const theme = useTheme();
+interface Props {
+  /**
+   * Injected by the documentation to work in an iframe.
+   * You won't need it on your project.
+   */
+  window?: () => Window;
+}
 
-  const [deviceScreen, setDeviceScreen] = React.useState({
-    width: 0,
-    height: 0,
-  });
+const drawerWidth = 240;
+const navItems = ["Home", "About", "Contact"];
 
-  React.useEffect(() => {
-    const updateDeviceScreen = () => {
-      const screenWidth = window.innerWidth;
-      const screenHeight = window.innerHeight;
+export default function DrawerAppBar(props: Props) {
+  const { window } = props;
+  const [mobileOpen, setMobileOpen] = React.useState(false);
 
-      setDeviceScreen({
-        width: screenWidth,
-        height: screenHeight,
-      })
-    };
+  const handleDrawerToggle = () => {
+    setMobileOpen((prevState) => !prevState);
+  };
 
-    updateDeviceScreen();
-
-    // Update columns on window resize
-    window.addEventListener("resize", updateDeviceScreen);
-
-    return () => {
-      // Cleanup event listener
-      window.removeEventListener("resize", updateDeviceScreen);
-    };
-  }, []);
-
-  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
-    null
+  const drawer = (
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
+      <Typography
+        variant="h6"
+        sx={{ my: 2, display: "flex", justifyContent: "center" }}
+      >
+        <Image
+          src="/assets/images/logo2.svg"
+          alt="logo"
+          width={40}
+          height={40}
+        />
+      </Typography>
+      <Divider />
+      <List>
+        {navItems.map((item) => (
+          <ListItem key={item} disablePadding>
+            <ListItemButton sx={{ textAlign: "center" }}>
+              <ListItemText primary={item} />
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </List>
+    </Box>
   );
 
-  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElNav(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = (path: string) => {
-    setAnchorElNav(null);
-    handleNavNavigation(path);
-  };
-
-  const handleNavNavigation = (path: string) => {
-    window.location.href = path;
-  };
+  const container =
+    window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <AppBar
-      position="fixed"
+    <Box
       sx={{
-        backgroundColor: "rgba(255, 255, 255, 0.6)",
-        backdropFilter: "blur(5px)",
+        display: "flex",
+        // backgroundColor: "white",
+        background:
+          "linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 100%)",
+        borderBottom: "1px solid #14b8a6",
+        backdropFilter: "blur(1px)",
+        position: "fixed",
+        width: "100%",
+        zIndex: 5,
+        padding: "0 !important",
       }}
     >
-      <Container maxWidth="xl" sx={{ backgroundColor: "transparent" }}>
-        <Toolbar disableGutters sx={{ backgroundColor: "transparent", height: "85px" }}>
-          <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            <Image
-              src="/assets/images/logo2.svg"
-              alt="Butterfly Effect Logo"
-              width={
-                deviceScreen.width < screen.sm && deviceScreen.width < screen.md
-                  ? 80
-                  : 100
-              }
-              height={
-                deviceScreen.width < screen.sm && deviceScreen.width < screen.md
-                  ? 80
-                  : 100
-              }
-            />
-          </Box>
-
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
+      {/* <CssBaseline /> */}
+      <AppBar
+        component="nav"
+        sx={{ background: "transparent", padding: "0 20px" }}
+      >
+        <Toolbar
+          sx={{
+            display: "flex",
+            justifyContent: "space-evenly",
+          }}
+        >
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="start"
+            onClick={handleDrawerToggle}
+            sx={{ mr: 2, display: { sm: "none" } }}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Box>
+            <Typography
+              // variant="h6"
+              // component="div"
+              sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
             >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: "block", md: "none" },
-              }}
-            >
-              {pages.map((page) => (
-                <MenuItem
-                  key={page.navName}
-                  onClick={() => handleCloseNavMenu(page.path)}
-                >
-                  <Typography
-                    textAlign="center"
-                    sx={{
-                      color: "#446580",
-                      fontFamily: "Roboto",
-                      fontWeight: "Bold",
-                    }}
-                  >
-                    {page.navName}
-                  </Typography>
-                </MenuItem>
-              ))}
-            </Menu>
+              <Image
+                src="/assets/images/logo2.svg"
+                alt="logo"
+                width={70}
+                height={70}
+              />
+            </Typography>
           </Box>
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            <Image
-              src="/assets/images/logo2.svg"
-              alt="Butterfly Effect Logo"
-              width={
-                deviceScreen.width <= screen.sm && deviceScreen.height < 678
-                  ? 80
-                  : 100
-              }
-              height={
-                deviceScreen.width <= screen.sm && deviceScreen.height   < 678
-                  ? 80
-                  : 100
-              }
-            />
-          </Box>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
-              <Button
-                key={page.navName}
-                onClick={() => handleNavNavigation(page.path)}
-                sx={{
-                  my: 2,
-                  color: "#446580",
-                  display: "block",
-                  fontFamily: "Roboto",
-                  mx: 2,
-                  fontSize: 22,
-                  fontWeight: "Bold",
-                }}
-              >
-                {page.navName}
+          <Box sx={{ display: { xs: "none", sm: "block" } }}>
+            {navItems.map((item) => (
+              <Button key={item} sx={{ color: "#fff", fontWeight: 600, paddingLeft: '15px', paddingRight: '15px' }}>
+                {item}
               </Button>
             ))}
           </Box>
-
-          <Box
-            sx={{
-              flexGrow: 1,
-              padding: 1,
-              marginLeft: 1,
-              alignContent: "center",
-              border: "2px solid #446580",
-              backgroundColor: "rgb(220,220,220)",
-              borderRadius: "8px",
-              maxWidth: 250,
-              [theme.breakpoints.down("sm")]: {
-                padding: theme.spacing(1),
-                maxWidth: "100%",
-              },
-              "&:hover": {
-                backgroundColor: "white",
-                color: "rgb(0, 94, 168)",
-                "& h6": {
-                  color: "rgb(0, 94, 168)",
-                },
-              },
-            }}
+          <Button
+            // variant="outlined"
+            endIcon={<LaunchIcon />}
+            sx={{ color: "#fff", backgroundColor: "blue !important", fontWeight: 600 }}
           >
-            <Link href="/donate" className="font-medium">
-              <Typography
-                variant="h6"
-                noWrap
-                sx={{
-                  fontFamily: "Roboto",
-                  fontWeight: 600,
-                  color: "#446580",
-                  letterSpacing: ".3rem",
-                  textAlign: "center",
-                  textDecoration: "none",
-                  [theme.breakpoints.down("sm")]: {
-                    maxWidth: "100%",
-                    fontSize: "12px",
-                    letterSpacing: ".2rem",
-                  },
-                }}
-              >
-                Invest Today
-                <LaunchIcon
-                  sx={{
-                    ml: 2,
-                    [theme.breakpoints.down("sm")]: {
-                      fontSize: "16px",
-                    },
-                  }}
-                />
-              </Typography>
-            </Link>
-          </Box>
+            Donate
+          </Button>
         </Toolbar>
-      </Container>
-    </AppBar>
+      </AppBar>
+      <nav>
+        <Drawer
+          container={container}
+          variant="temporary"
+          open={mobileOpen}
+          onClose={handleDrawerToggle}
+          ModalProps={{
+            keepMounted: true, // Better open performance on mobile.
+          }}
+          sx={{
+            display: { xs: "block", sm: "none" },
+            "& .MuiDrawer-paper": {
+              boxSizing: "border-box",
+              width: drawerWidth,
+            },
+          }}
+        >
+          {drawer}
+        </Drawer>
+      </nav>
+      <Box component="main">
+        <Toolbar />
+      </Box>
+    </Box>
   );
 }
-export default ResponsiveAppBar;

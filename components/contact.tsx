@@ -8,35 +8,7 @@ import LanguageIcon from "@mui/icons-material/Language";
 import Divider from "@mui/material/Divider";
 import contactImage from "../public/assets/images/contact.png";
 import Image from "next/image";
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    backgroundImage: `url(${contactImage.src}) !important`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    height: "100vh",
-    display: "flex",
-    justifyContent: "center",
-    marginTop: theme.spacing(12),
-    backgroundAttachment: "fixed",
-
-    "@media (max-width: 600px)": {
-      height: "fit-content",
-    },
-  },
-  formContainer: {
-    display: "flex",
-    justifyContent: "space-evenly",
-    alignItems: "center",
-    padding: theme.spacing(4),
-    borderRadius: theme.spacing(2),
-    width: "100%",
-  },
-  formField: {
-    color: "#000",
-    marginBottom: theme.spacing(2),
-  },
-}));
+import { useStyles } from "@styles/customStyledComponents";
 
 const Contact = () => {
   const classes = useStyles();
@@ -49,6 +21,7 @@ const Contact = () => {
           xs={12}
           md={4}
           lg={3}
+          className={classes.forText}
           sx={{
             display: "flex",
             flexDirection: "column",
@@ -188,6 +161,7 @@ const Contact = () => {
           xs={12}
           md={6}
           lg={5}
+          className={classes.forText}
           sx={{
             backgroundColor: "rgba(255, 255, 255, 0.8)",
             borderRadius: "10px",
@@ -205,7 +179,7 @@ const Contact = () => {
           
         >
           <Typography
-            variant="h5"
+            variant="h1"
             sx={{
               fontWeight: "bold",
               mb: "2px",

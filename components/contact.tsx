@@ -43,12 +43,20 @@ const Contact = () => {
               alignItems: "center",
               alignContent: "center",
               marginBottom: "1rem",
+              
+              "@media (max-width: 300px)": {
+                justifyContent: "center",
+              },
             }}
           >
             <PlaceIcon
               sx={{
                 fontSize: "2rem",
                 marginLeft: "2rem",
+
+                "@media (max-width: 300px)": {
+                  marginLeft: "0",
+                },
               }}
             />
             <Box
@@ -76,12 +84,20 @@ const Contact = () => {
               alignItems: "center",
               alignContent: "center",
               marginBottom: "1rem",
+              
+              "@media (max-width: 300px)": {
+                justifyContent: "center",
+              },
             }}
           >
             <PhoneIcon
               sx={{
                 fontSize: "2rem",
                 marginLeft: "2rem",
+
+                "@media (max-width: 300px)": {
+                  marginLeft: "0",
+                },
               }}
             />
             <Box
@@ -105,12 +121,20 @@ const Contact = () => {
               alignItems: "center",
               alignContent: "center",
               marginBottom: "1rem",
+
+              "@media (max-width: 300px)": {
+                justifyContent: "center",
+              },
             }}
           >
             <EmailIcon
               sx={{
                 fontSize: "2rem",
                 marginLeft: "2rem",
+                
+                "@media (max-width: 300px)": {
+                  marginLeft: "0",
+                },
               }}
             />
             <Box
@@ -134,12 +158,20 @@ const Contact = () => {
               alignItems: "center",
               alignContent: "center",
               marginBottom: "1rem",
+
+              "@media (max-width: 300px)": {
+                justifyContent: "center",
+              },
             }}
           >
             <LanguageIcon
               sx={{
                 fontSize: "2rem",
                 marginLeft: "2rem",
+                
+                "@media (max-width: 300px)": {
+                  marginLeft: "0",
+                },
               }}
             />
             <Box
@@ -179,7 +211,7 @@ const Contact = () => {
           
         >
           <Typography
-            variant="h1"
+            variant="h3"
             sx={{
               fontWeight: "bold",
               mb: "2px",

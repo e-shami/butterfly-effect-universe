@@ -16,6 +16,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import LaunchIcon from "@mui/icons-material/Launch";
 import Image from "next/image";
+import { CssBaseline } from "@material-ui/core";
 
 interface Props {
   /**
@@ -71,8 +72,8 @@ export default function DrawerAppBar(props: Props) {
         display: "flex",
         // backgroundColor: "white",
         background:
-          "linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 100%)",
-        borderBottom: "1px solid #14b8a6",
+          "#fff",
+        // borderBottom: "1px solid #14b8a6",
         backdropFilter: "blur(1px)",
         position: "fixed",
         width: "100%",
@@ -80,15 +81,15 @@ export default function DrawerAppBar(props: Props) {
         padding: "0 !important",
       }}
     >
-      {/* <CssBaseline /> */}
+      <CssBaseline />
       <AppBar
         component="nav"
-        sx={{ background: "transparent", padding: "0 20px" }}
+        sx={{ background: "transparent", padding: "0 40px" }}
       >
         <Toolbar
           sx={{
             display: "flex",
-            justifyContent: "space-evenly",
+            justifyContent: "space-between",
           }}
         >
           <IconButton
@@ -116,7 +117,21 @@ export default function DrawerAppBar(props: Props) {
           </Box>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: "#fff", fontWeight: 600, paddingLeft: '15px', paddingRight: '15px' }}>
+              <Button
+                key={item}
+                sx={{
+                  color: "#14b8a6",
+                  fontWeight: 600,
+                  paddingLeft: "15px",
+                  paddingRight: "15px",
+                  borderRadius: "0",
+                  borderBottom: "2px solid transparent",
+
+                  "&:hover": {
+                    borderBottom: "2px solid #14b8a6",
+                  },
+                }}
+              >
                 {item}
               </Button>
             ))}
@@ -124,7 +139,20 @@ export default function DrawerAppBar(props: Props) {
           <Button
             // variant="outlined"
             endIcon={<LaunchIcon />}
-            sx={{ color: "#fff", backgroundColor: "blue !important", fontWeight: 600 }}
+            sx={{
+              color: "#14b8a6",
+              backgroundColor: "#fff !important",
+              fontWeight: 600,
+              borderRadius: "0",
+              border: "2px solid #14b8a6",
+              padding: "5px 20px",
+
+              "&:hover": {
+                backgroundColor: "transparent !important",
+                border: "2px solid transparent",
+                borderBottom: "2px solid #14b8a6",
+              },
+            }}
           >
             Donate
           </Button>

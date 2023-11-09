@@ -2,7 +2,6 @@
 import React from "react";
 import { Grid, Paper, Typography } from "@mui/material";
 import lib6 from "../public/assets/images/hero.png";
-import Image from "next/image";
 import { useStyles } from "@styles/customStyledComponents";
 
 const Hero = () => {
@@ -17,14 +16,10 @@ const Hero = () => {
   };
 
   const heroContentStyle = {
-    // background: "none",
-    borderRadius: "10px",
+    borderRadius: "0",
     padding: "2.5rem",
     border: "1px solid #14b8a6",
     background: "rgba(0,0,0,0.3)",
-      // "linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 100%)",
-
-    // backdropFilter: "blur(1px)",
     boxShadow: "0px 0px 6px 1px rgba(0,0,0,0.75)",
 
     "@media (max-width: 600px)": {
@@ -35,21 +30,17 @@ const Hero = () => {
   const heroTextStyle = {
     color: "white",
     textAlign: "left",
-    // fontSize: 18,
 
   };
 
   const heroH1Style = {
-    color: "#14b8a6",
+    color: "#fff !important",
     textAlign: "center",
-    // fontSize: 38,
-    // fontWeight: 600,
     textTransform: "capitalize",
     marginBottom: "2rem",
     alignSelf: "center",
 
     "@media (max-width: 600px)": {
-      // fontSize: 24,
       marginBottom: "0.5rem",
     },
   };
@@ -72,7 +63,6 @@ const Hero = () => {
         justifyContent={"center"}
         alignItems={"center"}
         sx={{
-          // background: "linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.5) 100%)",
           width: "100%",
           height: "100vh",
         }}
@@ -80,7 +70,7 @@ const Hero = () => {
         <Grid item xs={10} sm={8} md={6}>
           <Paper style={heroContentStyle}>
             <Typography variant="h1" sx={heroH1Style}>
-              Butterfly Effect Universe
+              Butterfly effect Universe
             </Typography>
             <Typography variant="body1" sx={heroTextStyle}>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid

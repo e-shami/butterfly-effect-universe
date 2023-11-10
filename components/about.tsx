@@ -25,6 +25,7 @@ const AboutUs = () => {
       "@media (max-width: 600px)": {
           height: "fit-content",
           borderRadius: "0 0 50px 0",
+          paddingBottom: "5vh",
 
       },
     }}

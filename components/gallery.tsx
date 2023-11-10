@@ -6,49 +6,77 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import { CardActionArea, ImageList, ImageListItem } from "@mui/material";
+import { useStyles } from "@styles/customStyledComponents";
+import { makeStyles } from "@material-ui/core";
+
+
 
 const ActionAreaCard = ({
   item,
 }: {
   item: { img: string; title: string; description: string };
-}) => (
-  <Card
+}) => {
+  const classes = useStyles();
+
+  return(
+    <Card
     sx={{
       maxWidth: 435,
       borderRadius: "8px",
       borderBlockColor: "rgb(94, 234, 212)",
       borderWidth: "2.5px",
       borderStyle: "ridge",
+      height: "100%",
     }}
   >
     <CardActionArea>
       <CardMedia
         component="img"
-        width="140"
-        height="140"
         image={item.img}
         alt={item.title}
+        sx={{
+          "@media (max-width: 600px)": {
+            height: "20vh",
+          },
+          "@media (min-width: 600px) and (max-width: 1024px)": {
+            height: "30vh",
+          },
+          "@media (min-width: 1024px) and (max-width: 1440px)": {
+            height: "40vh",
+          },
+          "@media (min-width: 1440px)": {
+            height: "50vh",
+          }
+        }}
       />
-      <CardContent>
+      <CardContent 
+      className={classes.forText}
+      >
         <Typography
           gutterBottom
-          variant="h5"
-          component="div"
+          variant="body2"
           style={{
             fontFamily: "Roboto",
-            fontWeight: "Medium",
             color: "#526092",
           }}
         >
           {item.title}
         </Typography>
-        <Typography variant="body2" color="rgba(82, 96, 146, 0.6)">
+        
+        <Typography   
+        variant="caption"
+        style={{
+          fontFamily: "Roboto",
+          color: "#526092",
+        }}
+        >
           {item.description}
         </Typography>
       </CardContent>
     </CardActionArea>
   </Card>
-);
+  )
+};
 
 interface ItemData {
   img: string;
@@ -63,7 +91,7 @@ const itemData : ItemData[] = [
     description: "Picture Description",
   },
   {
-    img: "/assets/images/gallery/image2.jpg",
+    img: "/assets/images/gallery/image2.png",
     title: "Picture Title",
     description: "Picture Description",
   },
@@ -78,12 +106,12 @@ const itemData : ItemData[] = [
     description: "Picture Description",
   },
   {
-    img: "/assets/images/gallery/image5.jpg",
+    img: "/assets/images/gallery/image5.png",
     title: "Picture Title",
     description: "Picture Description",
   },
   {
-    img: "/assets/images/gallery/image1.png",
+    img: "/assets/images/gallery/image6.webp",
     title: "Picture Title",
     description: "Picture Description",
   },
@@ -91,27 +119,23 @@ const itemData : ItemData[] = [
   // Add other image details here
 ];
 
-const ImageListWithCards = ({ itemData, columns }: { itemData: ItemData[]; columns: number }) => (
+const ImageListWithCards = ({ itemData, columns,}: { itemData: ItemData[]; columns: number;}) => (
   <ImageList
-    variant="masonry"
     cols={columns}
     gap={columns == 3 ? 30 : 10}
-    sx={{ maxWidth: "95%" }}
+    sx={{ maxWidth: "95%" , justifyContent: "center", alignItems: "center",  }}
   >
     {itemData.map((item) => (
-      <ImageListItem key={item.img}>
+      <ImageListItem key={item.img} >
         <ActionAreaCard item={item} />
       </ImageListItem>
     ))}
   </ImageList>
 );
 
-// Your itemData array with image details
-
-// Use the ImageListWithCards component
-
 const Gallery = () => {
   const [columns, setColumns] = useState(3);
+  const classes = useStyles();
 
   useEffect(() => {
     const updateColumns = () => {
@@ -162,27 +186,17 @@ const Gallery = () => {
             // marginTop: "10rem",
           },
         }}
+
+        className={classes.forText}
       >
         <Typography
-          variant="h2"
+          variant="h3"
           sx={{
             color: "#526092",
             textAlign: "center",
-            fontSize: 38,
             fontWeight: 600,
-            textTransform: "capitalize",
-            marginBottom: "2rem",
-            alignSelf: "flex-start",
-            display: "flex",
-            padding: "30px",
-            flexDirection: "column",
-            width: "100%",
-
-            "@media (max-width: 600px)": {
-              fontSize: 28,
-              marginBottom: "0",
-              position: "relative",
-            },
+            paddingY: "30px",
+            width: "100%"
           }}
         >
           Project Gallery

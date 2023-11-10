@@ -1,104 +1,156 @@
-import Image from "next/image";
+"use client";
+import { Grid, Box, Typography } from "@mui/material";
 import Link from "next/link";
 import React from "react";
-
+import Image from "next/image";
+import { useStyles } from "@styles/customStyledComponents";
 const Footer = () => {
+  const classes = useStyles();
   return (
-    <div className="flex flex-col justify-center items-center px-1 bg-teal-300 w-full bg-pink">
-      <div className="grid grid-cols-1 lg:grid-cols-3 place-items-center">
-        <div className="flex lg:flex-col w-3/4 justify-center items-start lg:items-start mt-4">
+    <Box
+      display="flex"
+      flexDirection="column"
+      justifyContent="center"
+      alignItems="center"
+      px={1}
+      bgcolor="#137d71"
+      color="white"
+      width="100%"
+    >
+      <Grid
+        container
+        justifyContent="center"
+        alignItems="center"
+        className={classes.forText}
+      >
+        <Grid
+          item
+          xs={12}
+          lg={4}
+          container
+          justifyContent="center"
+          alignItems="center"
+          px={1}
+          my={2}
+          sx={{
+            "@media (min-width: 1200px)": {
+              paddingLeft: "5%",
+            },
+          }}
+        >
           <Image
-            src="/assets/images/logo.svg"
+            src="/assets/images/logo2.svg"
             alt="Butterfly Effect Logo"
-            width={200}
-            height={200}
+            width={225}
+            height={225}
             className="object-contain"
           />
-          <p className="text-white font-regular font-inter md:text-md lg:text-xl">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed .
-          </p>
-        </div>
+          <Typography
+            variant="body2"
+            align="left"
+            gutterBottom
+            mt={2}
+            sx={{
+              "@media (max-width: 600px)": {
+                textAlign: "center",
+              },
+            }}
+          >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed.
+          </Typography>
+        </Grid>
 
-        {/* second column in lg screens */}
-        <div className="flex justify-between items-center w-8/12 lg:w-3/4 mt-2">
+        <Grid
+          item
+          xs={12}
+          lg={4}
+          px={2}
+          container
+          justifyContent="space-evenly"
+          alignItems="center"
+          mt={2}
+        >
           <div>
-            <Link
-              href="#"
-              className="text-white font-bold font-inter md:text-xl lg:text-2xl"
-            >
-              About Us
+            <Link href="#" passHref>
+              <Typography variant="h5" fontWeight={600}>
+                About Us
+              </Typography>
             </Link>
 
             <div className="flex flex-col mt-2 lg:mt-6 space-y-2">
-              <Link
-                href="#"
-                className="text-white font-medium font-inter md:text-md lg:text-xl"
-              >
-                Vision
+              <Link href="#" passHref>
+                <Typography variant="body1">Vision</Typography>
               </Link>
-              <Link
-                href="#"
-                className="text-white font-medium font-inter md:text-md lg:text-xl"
-              >
-                Mission
+              <Link href="#" passHref>
+                <Typography variant="body1">Mission</Typography>
               </Link>
-              <Link
-                href="#"
-                className="text-white font-medium font-inter md:text-md lg:text-xl"
-              >
-                Members
+              <Link href="#" passHref>
+                <Typography variant="body1">Members</Typography>
               </Link>
             </div>
           </div>
 
           <div>
-            <Link
-              href="#"
-              className="text-white font-bold font-inter md:text-xl lg:text-2xl"
-            >
-              Contact Us
+            <Link href="#" passHref>
+              <Typography variant="h5" fontWeight={600}>
+                Contact Us
+              </Typography>
             </Link>
 
             <div className="flex flex-col mt-2 lg:mt-6 space-y-2">
-              <Link
-                href="#"
-                className="text-white font-medium font-inter md:text-md lg:text-xl"
-              >
-                Phone
+              <Link href="#" passHref>
+                <Typography variant="body1">Phone</Typography>
               </Link>
-              <Link
-                href="#"
-                className="text-white font-medium font-inter md:text-md lg:text-xl"
-              >
-                Email
+              <Link href="#" passHref>
+                <Typography variant="body1">Email</Typography>
               </Link>
-              <Link
-                href="#"
-                className="text-white font-medium font-inter md:text-md lg:text-xl"
-              >
-                Message
+              <Link href="#" passHref>
+                <Typography variant="body1">Message</Typography>
               </Link>
             </div>
           </div>
-        </div>
+        </Grid>
 
         {/* 3rd column for lg screens */}
 
-        <div className="flex flex-col w-3/4 mt-4 justify-center items-center">
-          <h3 className="text-white font-Medium font-inter md:text-md lg:text-xl">
+        <Grid
+          item
+          xs={12}
+          sm={8}
+          md={6}
+          lg={4}
+          container
+          justifyContent="center"
+          alignItems="flex-start"
+          mt={4}
+        >
+          <Typography variant="h6" justifyContent={"center"}>
             Visit Our Social Media Pages
-          </h3>
+          </Typography>
 
-          <div className="flex justify-between items-center mt-4 w-3/4 space-x-6">
-            <button>
+          <Box
+            display="flex"
+            justifyContent="space-between"
+            pt={1}
+            px={4}
+            alignItems="center"
+            width="75%"
+            sx={{
+              "@media (max-width: 350px)": {
+                width: "80%",
+                paddingX: "0",
+              },
+            }}
+          >
+            <button onClick={() => window.open("https://www.linkedin.com/")}>
               <img
                 src="/assets/icons/linkedin.svg"
                 alt="linkedin icon svg"
-                className="w-10 h-10"
+                className="w-10 h-10  rounded-md"
               />
             </button>
 
-            <button>
+            <button onClick={() => window.open("https://www.instagram.com/")}>
               <img
                 src="/assets/icons/instagram.svg"
                 alt="linkedin icon svg"
@@ -106,33 +158,33 @@ const Footer = () => {
               />
             </button>
 
-            <button>
+            <button onClick={() => window.open("https://www.facebook.com/")}>
               <img
                 src="/assets/icons/facebook.svg"
                 alt="linkedin icon svg"
-                className="w-10 h-10 rounded-md"
+                className="w-10 h-10"
               />
             </button>
 
-            <button>
+            <button onClick={() => window.open("https://twitter.com/")}>
               <img
                 src="/assets/icons/twitter-X.svg"
                 alt="twitter new icon svg"
                 className="w-10 h-10"
               />
             </button>
-          </div>
-        </div>
-      </div>
+          </Box>
+        </Grid>
+      </Grid>
 
-      <div className="flex flex-col w-11/12 lg:mt-4 justify-center">
-        <hr className="w-full text-white my-4 " />
+      <Box display="flex" flexDirection="column" width="90%" mt={4} mx="auto">
+        <hr style={{ width: "100%", backgroundColor: "white" }} />
 
-        <p className="text-white font-regular font-inter md:text-md lg:text-xl mx-4 mb-4 text-center">
+        <Typography variant="body1" align="center" my={2}>
           © Copyright reserved for Butterfly Effect @2023
-        </p>
-      </div>
-    </div>
+        </Typography>
+      </Box>
+    </Box>
   );
 };
 

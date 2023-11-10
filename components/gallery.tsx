@@ -6,9 +6,7 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import { CardActionArea, ImageList, ImageListItem } from "@mui/material";
-import { useStyles } from "@styles/customStyledComponents";
-import { makeStyles } from "@material-ui/core";
-
+import { useStyles } from "@styles/customStyledComponents";   
 
 
 const ActionAreaCard = ({

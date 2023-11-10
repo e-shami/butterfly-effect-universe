@@ -52,30 +52,23 @@ export const useStyles = makeStyles((theme) => ({
     },
 
     "& h4": {
-      color: "#526092",
       fontSize: "1.875rem",
-      fontWeight: "bold",
       marginBottom: theme.spacing(2),
     },
 
     "& h5": {
-      color: "#526092",
       fontSize: "1.6rem",
-      fontWeight: "bold",
       marginBottom: theme.spacing(2),
     },
 
     "& h6": {
-      color: "#526092",
       fontSize: "1.4rem",
-      fontWeight: "bold",
       marginBottom: theme.spacing(2),
     },
 
     "& .MuiTypography-body1": {
       color: "#fff",
       fontSize: "1.25rem",
-      fontWeight: "bold",
       marginBottom: theme.spacing(2),
     },
     "& .MuiTypography-body2": {

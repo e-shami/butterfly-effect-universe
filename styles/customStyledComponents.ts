@@ -72,11 +72,9 @@ export const useStyles = makeStyles((theme) => ({
         marginBottom: theme.spacing(2),
         },
 
-    "& body1": {
+    "& .MuiTypography-body1": {
         color: "#fff",
         fontSize: "1.25rem",
-        fontWeight: "bold",
-        marginBottom: theme.spacing(2),
         },
     
     "@media (max-width: 1200px)": {
@@ -104,7 +102,7 @@ export const useStyles = makeStyles((theme) => ({
             fontSize: "1.125rem",
         },
     
-        "& body1": {
+        "& .MuiTypography-body1": {
             fontSize: "1.125rem",
         },    
     },
@@ -134,7 +132,7 @@ export const useStyles = makeStyles((theme) => ({
             fontSize: "0.84rem",
         },
     
-        "& body1": {
+        "& .MuiTypography-body1": {
             fontSize: "1rem",
         },
     },
@@ -164,7 +162,7 @@ export const useStyles = makeStyles((theme) => ({
             fontSize: "0.79rem",
             },
 
-        "& body1": {
+        "& .MuiTypography-body1": {
             fontSize: "0.875rem",
             },
     },

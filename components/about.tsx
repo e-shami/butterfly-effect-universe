@@ -1,309 +1,105 @@
+"use client";
+
 import React from "react";
-import { Grid, Paper, Typography, Link } from "@mui/material";
-import mission from "../public/assets/images/2.png";
-import EastIcon from "@mui/icons-material/East";
+import { Grid, Typography, Link, Divider } from "@mui/material";
+import mission from "../public/assets/images/about1.png";
 import Image from "next/image";
+import { useStyles } from "@styles/customStyledComponents";
 
 const AboutUs = () => {
+  const classes = useStyles();
+
   return (
     <Grid
     container
+    className={classes.forText}
     id = "about"
     sx={{
       position: "relative",
-      height: "100vh",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      paddingTop: "13vh",
+      paddingBottom: "15vh",
+
       "@media (max-width: 600px)": {
-          backgroundColor: "#c1e5e0",
           height: "fit-content",
           borderRadius: "0 0 50px 0",
+          paddingBottom: "5vh",
 
       },
     }}
     >
-      {/* Heading */}
-      <Grid
-        item
-        xs={12}
-        sm={12}
-        md={12}
+    <Typography variant="h3" sx={{ color: "#000", textTransform: 'uppercase', display: 'flex', justifyContent: 'center', width: '100%' }}>
+      About Us
+    </Typography>
+      <Grid item xs={10} sm={10} md={10} lg={10} xl={10} 
         sx={{
           display: "flex",
-          alignItems: "start",
-          alignContent: "start",
-          marginBottom: "5vh",
-          position: "relative",
-
-          "@media (max-width: 600px)": {
-            height: "fit-content",
-            marginBottom: "0",
-          },
-        }}
-      >
-        <Typography
-          variant="h2"
-          sx={{
-            color: "#526092",
-            textAlign: "center",
-            fontSize: 38,
-            fontWeight: 600,
-            textTransform: "capitalize",
-            marginBottom: "2rem",
-            alignSelf: "flex-start",
-            display: "flex",
-            padding: "30px",
-            flexDirection: "column",
-            width: "100%",
-            position: "absolute",
-
-            "@media (max-width: 600px)": {
-              fontSize: 28,
-              marginBottom: "0",
-              position: "relative",
-            },
-          }}
-        >
-          About Us
-        </Typography>
-      </Grid>
-
-      {/* Background Color Component */}
-      <Grid
-        item
-        xs={0}
-        sm={0}
-        md={10}
-        sx={{
-          height: "90vh",
-          width: "100%",
-          position: "absolute",
-          backgroundColor: "#c1e5e0",
-          border: "1px solid #fff",
-          boxShadow: "0px 0px 6px 1px #dbdbdb",
-          display: "flex",
-          flexDirection: "column",
-          zIndex: -1,
-          borderRadius: "0 0 50px 0",
-
-          "@media (max-width: 960px)": {
-            height: "90vh",
-          },
-          
-          "@media (max-width: 600px)": {
-            height: "85vh",
-            display: "none",
-          },
-
-        }}
-      ></Grid>
-
-      <Grid
-        item
-        xs={12}
-        sm={6}
-        md={6}
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          alignContent: "center",
           justifyContent: "center",
-          justifyItems: "center",
-          height: "80vh",
-          zIndex: 1,
-          position: "relative",
-
-          "@media (max-width: 960px)": {
-            flexDirection: "column-reverse",
-          },
+          alignItems: "center",
+          border: "1px solid #14b8a6", boxShadow: "0px 0px 6px 1px rgba(0,0,0,0.75)",
+          backgroundColor: "#14b8a6",
 
           "@media (max-width: 600px)": {
-            height: "fit-content",
-            marginRight: "0",
-            paddingBottom: "2rem",
-          },
-        }}
-      >
-        <Paper
-          sx={{
-
-            display: "flex",
             flexDirection: "column",
-            justifyContent: "center",
-            justifySelf: "center",
-            backgroundColor: "rgba(255, 255, 255, 0.8)",
-            borderRadius: "10px",
-            padding: "2rem",
-            width: "80%",
-            boxShadow: '0px 0px 10px 0px rgba(0,0,0,0.75)',
-            height: 'fit-content',
-            position: "relative",
-            // below md
-            "@media (max-width: 600px)": {
-              marginRight: "0",
-            },
-          }}
-        >
-          <Typography
-            variant="h4"
-            sx={{
-              color: "#526092",
-              textAlign: "center",
-              fontSize: 28,
-              fontWeight: 600,
-              textTransform: "capitalize",
-              marginBottom: "2rem",
-              alignSelf: "flex-start",
-              display: "flex",
-              flexDirection: "column",
-              width: "100%",
-
-              "@media (max-width: 600px)": {
-                fontSize: 24,
-                marginBottom: "0.5rem",
-              },
-            }}
-          >
-            Our Mission
-          </Typography>
-          <Typography
-            variant="body1"
-            sx={{
-              color: "black",
-              textAlign: "left",
-              fontSize: 16,
-              textTransform: "capitalize",
-              marginBottom: "2rem",
-              alignSelf: "flex-start",
-              display: "flex",
-              flexDirection: "column",
-              width: "100%",
-
-              "@media (max-width: 600px)": {
-                fontSize: 12,
-                marginBottom: "0.5rem",
-              },
-            }}
-          >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos,
-            corrupti quos. Ipsam aliquid rem consequatur? Id consectetur, quis
-            obcaecati animi sunt suscipit possimus hic blanditiis modi esse
-            eligendi commodi neque. Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Eos, corrupti quos. Ipsam aliquid rem consequatur?
-            Id consectetur, quis obcaecati animi sunt suscipit possimus hic
-            blanditiis modi esse eligendi commodi neque.
-          </Typography>
-          <Link
-            sx={{
-              backgroundColor: "#526092",
-              color: "#fff",
-              borderRadius: "10px",
-              padding: "0.6rem",
-              alignSelf: "flex-start",
-              display: "flex",
-              flexDirection: "row",
-              fontSize: 16,
-              textDecoration: "none",
-              cursor: "pointer",
-              width: "fit-content",
-
-              "@media (max-width: 600px)": {
-                fontSize: 14,
-                padding: "0.4rem",
-                alignSelf: "flex-end",
-              },
-            }}
-          >
-            Become a Patron
-            {/* arrow right */}
-            <EastIcon
-              sx={{
-                fontSize: 20,
-                marginLeft: "0.6rem",
-                display: "flex",
-                alignSelf: "center",
-
-                "@media (max-width: 600px)": {
-                  fontSize: 16,
-                  marginLeft: "0.4rem",
-                },
-              }}
-            />
-          </Link>
-        </Paper>
-      </Grid>
-      {/* Content */}
-      <Grid
-        item
-        xs={12}
-        sm={6}
-        md={6}
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          borderRadius: "50p  x 0 0 50px",
-          height: "80vh",
-          position: "relative",
-
-          alignSelf: "flex-end",
-          marginBottom: 10,
-          // below md
-
-
-          "@media (max-width: 600px)": {
-            display: "none",
-            height: "fit-content",
-          },
-
-          "@media (max-width: 960px)": {
-            height: "80vh",
+            padding: "1rem",
+            backgroundColor: "#14b8a6",
           },
         }}
       >
-        <Grid
-          item
-          xs={12}
-          sm={12}
-          md={12}
+        
+        <Grid item xs={12} sm={12} md={6} lg={6} xl={6}
           display="flex"
-          alignSelf="flex-end"
-          justifySelf="flex-end"
-          justifyContent="flex-end"
+          alignItems="center"
+
           sx={{
-            width: "100%",
-            borderRadius: "50px 0 0 50px",
-            zIndex: 1,
-            display: "flex",
-            position: "relative",
-
-            // below md
-            "@media (max-width: 960px)": {
-              height: "auto",
-              width: "100%",
-              zIndex: -1,
-            },
-
             "@media (max-width: 600px)": {
-              display: 'none',
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center"
             },
-
-
           }}
-        >
-          <Image
-            src={mission.src}
-            alt="contact"
-            width={500}
-            height={500}
-            style={{
-              position: "absolute",
-              height: "100%",
-              width: "auto",
-              zIndex: -1,
-              borderRadius: "50px 0 0 50px",
-              border: "1px solid #fff",
-              boxShadow: "4px 4px 0px 0px #dbdbdb",
-            }}
+          >
+          <Image src={mission.src} alt="mission"
+          width={500}
+          height={500}
+          style={{ width: "90%" }}
           />
+        </Grid>
+
+        <Grid item xs={12} sm={12} md={6} lg={6} xl={6}
+          display="flex"
+          flexDirection={"column"}
+          justifyContent="center"
+          alignItems="left"
+          sx={{ paddingRight: "2rem", paddingTop: "2rem",
+          "@media (max-width: 600px)": {
+            display: "flex",
+            justifyContent: "left",
+            alignItems: "left",
+            padding: "1rem",
+          },
+        }}
+          >
+          <Typography variant="h3" sx={{ color: "#fff !important", textTransform: 'uppercase', fontWeight: "400 !important  " }}>
+            Our Story
+          </Typography>
+
+          <Divider sx={{ backgroundColor: "#fff !important", height: "4px", width: "45%", marginTop: "0", marginBottom: "2rem" }} />
+
+          <Typography variant="body1" sx={{ color: "#fff", textAlign: 'justify',
+          "@media (max-width: 600px)": {
+            textAlign: "left",
+          },
+        }}>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
+            voluptatibus, voluptatem, quia, doloribus laboriosam quidem
+            voluptatum quibusdam quae quod molestias voluptate? Quisquam
+            voluptate, quibusdam voluptas quod, quas, quia voluptatibus
+            voluptatem quos quae quidem. Quisquam, quae. Quisquam, quae.
+            Quisquam, quae. Quisquam, quae. Quisquam, quae. Quisquam, quae.
+          </Typography>
         </Grid>
       </Grid>
     </Grid>

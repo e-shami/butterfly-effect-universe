@@ -9,10 +9,14 @@ const Hero = () => {
     backgroundImage: `url(${lib6.src}) !important`,
     backgroundSize: "cover",
     backgroundPosition: "center",
-    backgroundAttachment: "fixed",
+    // backgroundAttachment: "fixed",
     backgroundRepeat: "no-repeat",
     height: "100vh",
     backgroundPositionY: "bottom",
+
+    "@media (max-width: 600px)": {
+      backgroundPositionX: "left",
+    },
   };
 
   const heroContentStyle = {
@@ -23,7 +27,8 @@ const Hero = () => {
     boxShadow: "0px 0px 6px 1px rgba(0,0,0,0.75)",
 
     "@media (max-width: 600px)": {
-      padding: "0.5rem",
+      padding: "1.2rem",
+      background: "rgba(0,0,0,0.4)",
     },
   };
 
@@ -68,7 +73,7 @@ const Hero = () => {
         }}
       >
         <Grid item xs={10} sm={8} md={6}>
-          <Paper style={heroContentStyle}>
+          <Paper sx={heroContentStyle}>
             <Typography variant="h1" sx={heroH1Style}>
               Butterfly effect Universe
             </Typography>

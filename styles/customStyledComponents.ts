@@ -67,7 +67,7 @@ export const useStyles = makeStyles((theme) => ({
     },
 
     "& .MuiTypography-body1": {
-      color: "#fff",
+      // color: "#fff",
       fontSize: "1.25rem",
       marginBottom: theme.spacing(2),
     },

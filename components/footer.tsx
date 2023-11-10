@@ -4,7 +4,6 @@ import Link from "next/link";
 import React from "react";
 import Image from "next/image";
 import { useStyles } from "@styles/customStyledComponents";
-
 const Footer = () => {
   const classes = useStyles();
   return (
@@ -32,6 +31,7 @@ const Footer = () => {
           justifyContent="center"
           alignItems="center"
           px={1}
+          my={2}
           sx={{
             "@media (min-width: 1200px)": {
               paddingLeft: "5%",
@@ -39,7 +39,7 @@ const Footer = () => {
           }}
         >
           <Image
-            src="/assets/images/logo_highContrast.svg"
+            src="/assets/images/logo2.svg"
             alt="Butterfly Effect Logo"
             width={225}
             height={225}
@@ -49,6 +49,7 @@ const Footer = () => {
             variant="body2"
             align="left"
             gutterBottom
+            mt={2}
             sx={{
               "@media (max-width: 600px)": {
                 textAlign: "center",
@@ -149,7 +150,7 @@ const Footer = () => {
               />
             </button>
 
-            <button  onClick={() => window.open("https://www.instagram.com/")}>
+            <button onClick={() => window.open("https://www.instagram.com/")}>
               <img
                 src="/assets/icons/instagram.svg"
                 alt="linkedin icon svg"

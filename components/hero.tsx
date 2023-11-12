@@ -74,7 +74,7 @@ const Hero = () => {
       >
         <Grid item xs={10} sm={8} md={6}>
           <Paper sx={heroContentStyle}>
-            <Typography variant="h1" sx={heroH1Style}>
+            <Typography variant="h2" sx={heroH1Style}>
               Butterfly effect Universe
             </Typography>
             <Typography variant="body1" sx={heroTextStyle}>

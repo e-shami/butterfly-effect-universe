@@ -1,13 +1,11 @@
 "use client";
-import { makeStyles } from "@material-ui/core/styles";
+
 import { Grid, TextField, Typography, Box, Link } from "@mui/material";
 import PlaceIcon from "@mui/icons-material/Place";
 import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
 import LanguageIcon from "@mui/icons-material/Language";
 import Divider from "@mui/material/Divider";
-import contactImage from "../public/assets/images/contact.png";
-import Image from "next/image";
 import { useStyles } from "@styles/customStyledComponents";
 
 const Contact = () => {
@@ -68,7 +66,7 @@ const Contact = () => {
                 variant="body1"
                 gutterBottom
                 sx={{ fontWeight: "bold" }}
-              >
+                >
                 Location
               </Typography>
               <Typography variant="body1" gutterBottom>
@@ -89,12 +87,12 @@ const Contact = () => {
                 justifyContent: "center",
               },
             }}
-          >
+            >
             <PhoneIcon
               sx={{
                 fontSize: "2rem",
                 marginLeft: "2rem",
-
+                
                 "@media (max-width: 300px)": {
                   marginLeft: "0",
                 },
@@ -104,8 +102,10 @@ const Contact = () => {
               sx={{
                 marginLeft: "1rem",
               }}
-            >
-              <Typography variant="body1" gutterBottom>
+              >
+              <Typography variant="body1" 
+              sx={{ fontWeight: "bold" }}
+              gutterBottom>
                 Phone
               </Typography>
               <Typography variant="body1" gutterBottom>
@@ -121,12 +121,12 @@ const Contact = () => {
               alignItems: "center",
               alignContent: "center",
               marginBottom: "1rem",
-
+              
               "@media (max-width: 300px)": {
                 justifyContent: "center",
               },
             }}
-          >
+            >
             <EmailIcon
               sx={{
                 fontSize: "2rem",
@@ -141,8 +141,10 @@ const Contact = () => {
               sx={{
                 marginLeft: "1rem",
               }}
-            >
-              <Typography variant="body1" gutterBottom>
+              >
+              <Typography variant="body1"
+                 sx={{ fontWeight: "bold" }}
+                 gutterBottom>
                 Email
               </Typography>
               <Typography variant="body1" gutterBottom>
@@ -158,12 +160,12 @@ const Contact = () => {
               alignItems: "center",
               alignContent: "center",
               marginBottom: "1rem",
-
+              
               "@media (max-width: 300px)": {
                 justifyContent: "center",
               },
             }}
-          >
+            >
             <LanguageIcon
               sx={{
                 fontSize: "2rem",
@@ -173,13 +175,15 @@ const Contact = () => {
                   marginLeft: "0",
                 },
               }}
-            />
+              />
             <Box
               sx={{
                 marginLeft: "1rem",
               }}
-            >
-              <Typography variant="body1" gutterBottom>
+              >
+              <Typography variant="body1"
+                sx={{ fontWeight: "bold" }}
+               gutterBottom>
                 Website
               </Typography>
               <Typography variant="body1" gutterBottom>
@@ -211,8 +215,9 @@ const Contact = () => {
           
         >
           <Typography
-            variant="h3"
+            variant="h4"
             sx={{
+              color: "#526092",
               fontWeight: "bold",
               mb: "2px",
             }}
@@ -226,11 +231,12 @@ const Contact = () => {
               height: "2.5px",
               mb: "2rem",
             }}
-          />
+            />
           <form>
             <TextField
               label="Name"
               variant="outlined"
+              size="small"
               fullWidth
               className={classes.formField}
             />
@@ -238,16 +244,18 @@ const Contact = () => {
               label="Email"
               variant="outlined"
               fullWidth
+              size="small"
               className={classes.formField}
-            />
+              />
             <TextField
               label="Message"
               variant="outlined"
               fullWidth
+              size="small"
               multiline
               rows={4}
               className={classes.formField}
-            />
+              />
             <Link
               sx={{
                 backgroundColor: "#14b8a6",
@@ -260,7 +268,7 @@ const Contact = () => {
                 justifyContent: "center",
                 alignItems: "center",
               }}
-            >
+              >
               Submit
             </Link>
           </form>

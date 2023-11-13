@@ -21,16 +21,21 @@ const AboutUs = () => {
       alignItems: "center",
       paddingTop: "13vh",
       paddingBottom: "15vh",
+      
+      "@media (max-width: 900px)": {
+        paddingTop: "10vh",
+        paddingBottom: "5vh",
+      },
 
       "@media (max-width: 600px)": {
           height: "fit-content",
           borderRadius: "0 0 50px 0",
           paddingBottom: "5vh",
-
+          paddingTop: "5vh",
       },
     }}
     >
-    <Typography variant="h3" sx={{ color: "#000", textTransform: 'uppercase', display: 'flex', justifyContent: 'center', width: '100%' }}>
+    <Typography variant="h3" sx={{ color: "#000", textTransform: 'uppercase', display: 'flex', justifyContent: 'center', width: '100%', marginBottom: '1%' }}>
       About Us
     </Typography>
       <Grid item xs={10} sm={10} md={10} lg={10} xl={10} 
@@ -54,6 +59,11 @@ const AboutUs = () => {
           alignItems="center"
 
           sx={{
+            "@media (max-width: 900px)": {
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center"
+            },
             "@media (max-width: 600px)": {
               display: "flex",
               justifyContent: "center",
@@ -82,13 +92,26 @@ const AboutUs = () => {
           },
         }}
           >
-          <Typography variant="h3" sx={{ color: "#fff !important", textTransform: 'uppercase', fontWeight: "400 !important  " }}>
+          <Typography variant="h3" sx={{ color: "#fff !important", textTransform: 'uppercase', fontWeight: "200 !important  " }}>
             Our Story
           </Typography>
 
-          <Divider sx={{ backgroundColor: "#fff !important", height: "4px", width: "45%", marginTop: "0", marginBottom: "2rem" }} />
+          <Divider sx={{ backgroundColor: "#fff !important", height: "4px", width: "45%", marginTop: "0", marginBottom: "2rem",
+          "@media (max-width: 900px)": {
+            width: "100%",
+            marginBottom: "0.2rem",
+          },
+          "@media (max-width: 600px)": {
+            marginBottom: "0.2rem",
+            height: "2px",
+            width: "100%",
+          },
+          }} />
 
           <Typography variant="body1" sx={{ color: "#fff", textAlign: 'justify',
+          "@media (max-width: 900px)": {
+            textAlign: "left",
+          },
           "@media (max-width: 600px)": {
             textAlign: "left",
           },

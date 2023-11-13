@@ -258,18 +258,25 @@ const Contact = () => {
               />
             <Link
               sx={{
-                backgroundColor: "#14b8a6",
                 color: "#fff",
-                fontSize: "24px",
+                backgroundColor: "#526092 !important",
                 padding: "5px 25px 5px 25px",
                 cursor: "pointer",
                 textDecoration: "none",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
+                transitionDelay: "0.025s",
+
+                "&:hover": {
+                  backgroundColor: "#14b8a6 !important",
+                  color: "#fff",
+                },
               }}
               >
-              Submit
+                <Typography variant="body1" sx={{ fontWeight: "bold" }}>
+                  Submit
+                </Typography>
             </Link>
           </form>
         </Grid>

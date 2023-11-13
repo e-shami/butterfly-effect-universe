@@ -109,9 +109,9 @@ const AboutUs = () => {
             height="315"
             src="https://www.youtube.com/embed/xlziG5d3k2I?si=oA9HAoDrGX9FdNxd"
             title="YouTube video player"
-            frameborder="0"
+            // frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
+            allowFullScreen
           ></iframe>
         </Grid>
 

@@ -39,46 +39,36 @@ export const useStyles = makeStyles((theme) => ({
     
     "& h2": {
       color: "#526092",
-      // fontSize: "3.125rem",
       fontSize: "2.5rem",
       fontWeight: "bold",
-      // marginBottom: theme.spacing(2),
     },
 
     "& h3": {
       color: "#526092",
       fontSize: "2.5rem",
       fontWeight: "bold",
-      // marginBottom: theme.spacing(2),
     },
 
     "& h4": {
       fontSize: "1.875rem",
-      // marginBottom: theme.spacing(2),
     },
 
     "& h5": {
       fontSize: "1.6rem",
-      // marginBottom: theme.spacing(2),
     },
 
     "& h6": {
       fontSize: "1.4rem",
-      // marginBottom: theme.spacing(2),
     },
 
     "& .MuiTypography-body1": {
-      // color: "#fff",
       fontSize: "1rem",
-      // marginBottom: theme.spacing(2),
     },
     "& .MuiTypography-body2": {
       fontSize: "1rem",
-      // marginBottom: theme.spacing(2),
     },
     "& .MuiTypography-caption": {
       fontSize: "1rem",
-      // marginBottom: theme.spacing(2),
     },
 
     "@media (max-width: 1200px)": {
@@ -120,7 +110,7 @@ export const useStyles = makeStyles((theme) => ({
 
     "@media (max-width: 768px)": {
       "& h1": {
-        fontSize: "2.25rem",
+        fontSize: "2rem",
       },
 
       "& h2": {
@@ -144,14 +134,14 @@ export const useStyles = makeStyles((theme) => ({
       },
 
       "& .MuiTypography-body1": {
-        fontSize: "1rem",
+        fontSize: "12px",
       },
       "& .MuiTypography-body2": {
-        fontSize: "0.875rem",
+        fontSize: "12px",
       },
 
       "& .MuiTypography-caption": {
-        fontSize: "0.75rem",
+        fontSize: "11px",
       }
     },
 
@@ -181,14 +171,14 @@ export const useStyles = makeStyles((theme) => ({
       },
 
       "& .MuiTypography-body1": {
-        fontSize: "0.875rem",
+        fontSize: "12px",
       },
       "& .MuiTypography-body2": {
-        fontSize: "0.75rem",
+        fontSize: "12px",
       },
 
       "& .MuiTypography-caption": {
-        fontSize: "0.625rem",
+        fontSize: "11px",
       }
     },
   },

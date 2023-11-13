@@ -25,7 +25,7 @@ export const useStyles = makeStyles((theme) => ({
     width: "100%",
   },
   formField: {
-    color: "#000",
+    // color: "#000",
     marginBottom: theme.spacing(2),
   },
 
@@ -36,48 +36,49 @@ export const useStyles = makeStyles((theme) => ({
       fontWeight: "bold",
       marginBottom: theme.spacing(2),
     },
-
+    
     "& h2": {
       color: "#526092",
-      fontSize: "3.125rem",
+      // fontSize: "3.125rem",
+      fontSize: "2.5rem",
       fontWeight: "bold",
-      marginBottom: theme.spacing(2),
+      // marginBottom: theme.spacing(2),
     },
 
     "& h3": {
       color: "#526092",
       fontSize: "2.5rem",
       fontWeight: "bold",
-      marginBottom: theme.spacing(2),
+      // marginBottom: theme.spacing(2),
     },
 
     "& h4": {
       fontSize: "1.875rem",
-      marginBottom: theme.spacing(2),
+      // marginBottom: theme.spacing(2),
     },
 
     "& h5": {
       fontSize: "1.6rem",
-      marginBottom: theme.spacing(2),
+      // marginBottom: theme.spacing(2),
     },
 
     "& h6": {
       fontSize: "1.4rem",
-      marginBottom: theme.spacing(2),
+      // marginBottom: theme.spacing(2),
     },
 
     "& .MuiTypography-body1": {
       // color: "#fff",
-      fontSize: "1.25rem",
-      marginBottom: theme.spacing(2),
+      fontSize: "1rem",
+      // marginBottom: theme.spacing(2),
     },
     "& .MuiTypography-body2": {
-      fontSize: "1.25rem",
-      marginBottom: theme.spacing(2),
+      fontSize: "1rem",
+      // marginBottom: theme.spacing(2),
     },
     "& .MuiTypography-caption": {
-      fontSize: "1.125rem",
-      marginBottom: theme.spacing(2),
+      fontSize: "1rem",
+      // marginBottom: theme.spacing(2),
     },
 
     "@media (max-width: 1200px)": {
@@ -106,10 +107,10 @@ export const useStyles = makeStyles((theme) => ({
       },
 
       "& .MuiTypography-body1": {
-        fontSize: "1.125rem",
+        fontSize: "1rem",
       },
       "& .MuiTypography-body2": {
-        fontSize: "1.125rem",
+        fontSize: "1rem",
       },
 
       "& .MuiTypography-caption": {
@@ -131,7 +132,7 @@ export const useStyles = makeStyles((theme) => ({
       },
 
       "& h4": {
-        fontSize: "1.125rem",
+        fontSize: "1.5rem",
       },
 
       "& h5": {

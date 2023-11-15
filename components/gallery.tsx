@@ -180,20 +180,18 @@ const Gallery = () => {
           paddingX: "50px",
           height: "fit-content",
 
-          "@media (min-width:1024px)": {
-            // marginTop: "10rem",
-          },
         }}
 
         className={classes.forText}
       >
         <Typography
-          variant="h3"
+          variant="h4"
           sx={{
-            color: "#526092",
-            textAlign: "center",
-            fontWeight: 600,
+            color: "#526092 !important",
+            textTransform: "uppercase",
+            fontWeight: "400 !important",
             paddingBottom: "30px",
+            textAlign: "center",
             width: "100%"
           }}
         >

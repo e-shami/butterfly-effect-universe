@@ -18,10 +18,11 @@ const AboutUs = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        paddingTop: "13vh",
+        padding: "2rem 5rem",
 
         "@media (max-width: 900px)": {
           paddingTop: "5vh",
+          padding: "2rem 1rem",
         },
 
         "@media (max-width: 600px)": {
@@ -47,7 +48,7 @@ const AboutUs = () => {
         sx={{
           backgroundColor: "#14b8a6 !important",
           height: "4px",
-          width: "90%",
+          width: "100%",
           marginBottom: "2rem",
           "@media (max-width: 900px)": {
             marginBottom: "0.5rem",
@@ -70,11 +71,9 @@ const AboutUs = () => {
           flexDirection: "row-reverse",
           justifyContent: "center",
           alignItems: "center",
-          padding: "0 2rem",
 
           "@media (max-width: 600px)": {
             flexDirection: "column",
-            padding: "1rem",
           },
         }}
       >
@@ -190,14 +189,12 @@ const AboutUs = () => {
             color: "#526092 !important",
             textTransform: "uppercase",
             fontWeight: "400 !important  ",
-            // marginBottom: "2rem",
+            marginBottom: "2rem",
             marginTop: "2rem",
             textAlign: "center",
 
             "@media (max-width: 900px)": {
-              marginTop: "0rem",
-              // marginBottom: "0.5rem",
-              // textAlign: "left",
+              marginTop: "2rem",
             },
           }}
         >
@@ -212,11 +209,11 @@ const AboutUs = () => {
           flexDirection: "row",
           justifyContent: "space-evenly",
           alignItems: "center",
-          padding: "2.5rem 2rem",
+          // padding: "2.5rem 2rem",
           
           "@media (max-width: 600px)": {
             flexDirection: "column",
-            padding: "1rem",
+            // padding: "1rem",
           },
         }}
       >

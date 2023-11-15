@@ -3,6 +3,7 @@
 import React from "react";
 import { Grid, Typography, Link, Divider } from "@mui/material";
 import { useStyles } from "@styles/customStyledComponents";
+import BioCard from "./Cards/card";
 
 const AboutUs = () => {
   const classes = useStyles();
@@ -18,18 +19,14 @@ const AboutUs = () => {
         justifyContent: "center",
         alignItems: "center",
         paddingTop: "13vh",
-        paddingBottom: "15vh",
 
         "@media (max-width: 900px)": {
-          paddingTop: "10vh",
-          paddingBottom: "5vh",
+          paddingTop: "5vh",
         },
 
         "@media (max-width: 600px)": {
           height: "fit-content",
           borderRadius: "0 0 50px 0",
-          paddingBottom: "5vh",
-          paddingTop: "5vh",
         },
       }}
     >
@@ -50,31 +47,30 @@ const AboutUs = () => {
         sx={{
           backgroundColor: "#14b8a6 !important",
           height: "4px",
-          width: "80%",
+          width: "90%",
           marginBottom: "2rem",
           "@media (max-width: 900px)": {
-            width: "100%",
             marginBottom: "0.5rem",
           },
           "@media (max-width: 600px)": {
             marginBottom: "0.5rem",
             height: "2px",
-            width: "100%",
           },
         }}
       />
       <Grid
         item
         xs={12}
-        sm={10}
-        md={10}
-        lg={10}
-        xl={10}
+        sm={12}
+        md={12}
+        lg={12}
+        xl={12}
         sx={{
           display: "flex",
           flexDirection: "row-reverse",
           justifyContent: "center",
           alignItems: "center",
+          padding: "0 2rem",
 
           "@media (max-width: 600px)": {
             flexDirection: "column",
@@ -112,6 +108,9 @@ const AboutUs = () => {
             // frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
+            style={{
+              flex: "1",
+            }}
           ></iframe>
         </Grid>
 
@@ -127,7 +126,6 @@ const AboutUs = () => {
           justifyContent="center"
           alignItems="left"
           sx={{
-            paddingLeft: "2rem",
             paddingRight: "2rem",
             paddingTop: "2rem",
             "@media (max-width: 600px)": {
@@ -140,44 +138,34 @@ const AboutUs = () => {
           }}
         >
           <Typography
-            variant="h3"
+            variant="h4"
             sx={{
-              color: "#000 !important",
+              color: "#526092 !important",
               textTransform: "uppercase",
               fontWeight: "400 !important  ",
+              marginBottom: "2rem",
+
+              "@media (max-width: 900px)": {
+                textAlign: "center",
+                marginBottom: "0.5rem",
+              },
             }}
           >
             Our Mission
           </Typography>
 
-          <Divider
-            sx={{
-              backgroundColor: "#14b8a6 !important",
-              height: "4px",
-              width: "53%",
-              marginTop: "0",
-              marginBottom: "2rem",
-              "@media (max-width: 900px)": {
-                width: "100%",
-                marginBottom: "0.5rem",
-              },
-              "@media (max-width: 600px)": {
-                marginBottom: "0.5rem",
-                height: "2px",
-                width: "100%",
-              },
-            }}
-          />
-
           <Typography
             variant="body1"
             sx={{
               color: "#000",
+              paddingRight: "3rem",
               "@media (max-width: 900px)": {
-                textAlign: "left",
+                textAlign: "justify",
+                paddingRight: "0",
               },
               "@media (max-width: 600px)": {
-                textAlign: "left",
+                paddingRight: "0",
+                textAlign: "justify",
               },
             }}
           >
@@ -188,6 +176,61 @@ const AboutUs = () => {
             voluptatem quos quae quidem. Quisquam, quae. Quisquam, quae.
             Quisquam, quae. Quisquam, quae. Quisquam, quae. Quisquam, quae.
           </Typography>
+        </Grid>
+        </Grid>
+      <Grid item xs={12} sx={{ 
+          padding: "0 2rem",
+
+          "@media (max-width: 600px)": {
+            padding: "0 1rem",
+          },  }}>
+        <Typography
+          variant="h4"
+          sx={{
+            color: "#526092 !important",
+            textTransform: "uppercase",
+            fontWeight: "400 !important  ",
+            // marginBottom: "2rem",
+            marginTop: "2rem",
+            textAlign: "center",
+
+            "@media (max-width: 900px)": {
+              marginTop: "0rem",
+              // marginBottom: "0.5rem",
+              // textAlign: "left",
+            },
+          }}
+        >
+          Our Team
+        </Typography>
+      </Grid>
+      <Grid
+        container
+        spacing={3}
+        sx={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-evenly",
+          alignItems: "center",
+          padding: "2.5rem 2rem",
+          
+          "@media (max-width: 600px)": {
+            flexDirection: "column",
+            padding: "1rem",
+          },
+        }}
+      >
+        <Grid item xs={12} sm={6} md={4} lg={3} xl={3}>
+          <BioCard role="PRESIDENT" />  
+        </Grid>
+        <Grid item xs={12} sm={6} md={4} lg={3} xl={3}>
+          <BioCard role="BOD" />  
+        </Grid>
+        <Grid item xs={12} sm={6} md={4} lg={3} xl={3}>
+          <BioCard role="MEMBER" />  
+        </Grid>
+        <Grid item xs={12} sm={6} md={4} lg={3} xl={3}>
+          <BioCard role="MEMBER" />
         </Grid>
       </Grid>
     </Grid>

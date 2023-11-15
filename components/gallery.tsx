@@ -193,7 +193,7 @@ const Gallery = () => {
             color: "#526092",
             textAlign: "center",
             fontWeight: 600,
-            paddingY: "30px",
+            paddingBottom: "30px",
             width: "100%"
           }}
         >

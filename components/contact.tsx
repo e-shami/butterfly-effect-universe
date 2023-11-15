@@ -17,6 +17,7 @@ const Contact = () => {
         <Grid
           item
           xs={12}
+          sm={6}
           md={4}
           lg={3}
           className={classes.forText}
@@ -195,6 +196,7 @@ const Contact = () => {
         <Grid
           item
           xs={12}
+          sm={8}
           md={6}
           lg={5}
           className={classes.forText}
@@ -210,6 +212,7 @@ const Contact = () => {
 
             "@media (max-width: 600px)": {
                 marginTop: '2rem',
+                textAlign: 'center',
             }
           }}
           

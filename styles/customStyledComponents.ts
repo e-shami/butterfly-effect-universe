@@ -134,14 +134,14 @@ export const useStyles = makeStyles((theme) => ({
       },
 
       "& .MuiTypography-body1": {
-        fontSize: "12px",
+        fontSize: "0.8rem",
       },
       "& .MuiTypography-body2": {
-        fontSize: "12px",
+        fontSize: "0.8rem",
       },
 
       "& .MuiTypography-caption": {
-        fontSize: "11px",
+        fontSize: "0.7rem",
       }
     },
 
@@ -151,7 +151,7 @@ export const useStyles = makeStyles((theme) => ({
       },
 
       "& h2": {
-        fontSize: "1.25rem",
+        fontSize: "1.125rem",
       },
 
       "& h3": {
@@ -171,14 +171,14 @@ export const useStyles = makeStyles((theme) => ({
       },
 
       "& .MuiTypography-body1": {
-        fontSize: "12px",
+        fontSize: "0.8rem",
       },
       "& .MuiTypography-body2": {
-        fontSize: "12px",
+        fontSize: "0.8rem",
       },
 
       "& .MuiTypography-caption": {
-        fontSize: "11px",
+        fontSize: "0.7rem",
       }
     },
   },

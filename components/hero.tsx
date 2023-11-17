@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { Grid, Paper, Typography } from "@mui/material";
-import lib6 from "../public/assets/images/hero.png";
+import lib6 from "../public/assets/images/hero.jpg";
 import { useStyles } from "@styles/customStyledComponents";
 
 const Hero = () => {

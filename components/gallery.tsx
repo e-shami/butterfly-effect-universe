@@ -94,17 +94,17 @@ const itemData : ItemData[] = [
     description: "Picture Description",
   },
   {
-    img: "/assets/images/gallery/image3.png",
+    img: "/assets/images/gallery/image3.jpg",
     title: "Picture Title",
     description: "Picture Description",
   },
   {
-    img: "/assets/images/gallery/image4.png",
+    img: "/assets/images/gallery/image4.jpg",
     title: "Picture Title",
     description: "Picture Description",
   },
   {
-    img: "/assets/images/gallery/image5.png",
+    img: "/assets/images/gallery/image5.jpg",
     title: "Picture Title",
     description: "Picture Description",
   },

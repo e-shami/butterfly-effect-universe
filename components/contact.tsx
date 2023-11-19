@@ -16,8 +16,8 @@ const Contact = () => {
       <Grid container className={classes.formContainer}>
         <Grid
           item
-          xs={8}
-          sm={6}
+          xs={12}
+          sm={8}
           md={4}
           lg={3}
           className={classes.forText}

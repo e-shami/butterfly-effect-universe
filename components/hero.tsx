@@ -28,7 +28,7 @@ const Hero = () => {
 
     "@media (max-width: 600px)": {
       padding: "1.2rem",
-      background: "rgba(0,0,0,0.4)",
+      background: "rgba(0,0,0,0.5)",
     },
   };
 

@@ -42,7 +42,10 @@ export default function DrawerAppBar(props: Props) {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
+    <Box
+      onClick={handleDrawerToggle}
+      sx={{ textAlign: "center", marginTop: "5vh" }}
+    >
       {/* <Typography
         variant="h6"
         sx={{ my: 2, display: "flex", justifyContent: "center" }}
@@ -60,7 +63,10 @@ export default function DrawerAppBar(props: Props) {
           <Link href={item?.path} key={item?.path} passHref={true}>
             <ListItem key={item?.navName} disablePadding>
               <ListItemButton sx={{ textAlign: "center" }}>
-                <ListItemText primary={item?.navName} />
+                <ListItemText
+                  primary={item?.navName}
+                  sx={{ color: "#526092" }}
+                />
               </ListItemButton>
             </ListItem>
           </Link>
@@ -111,17 +117,21 @@ export default function DrawerAppBar(props: Props) {
             </IconButton>
             <Box>
               <Link href="/" passHref={true}>
-              <Typography
-                sx={{ flexGrow: 1, display: { xs: "none", sm: "block" }, cursor: "pointer" }}
-              >
-                <Image
-                  src="/assets/images/logo2.svg"
-                  alt="logo"
-                  width={70}
-                  height={70}
-                  style={{ display: "inline-block" }}
-                />
-              </Typography>
+                <Typography
+                  sx={{
+                    flexGrow: 1,
+                    display: { xs: "none", sm: "block" },
+                    cursor: "pointer",
+                  }}
+                >
+                  <Image
+                    src="/assets/images/logo2.svg"
+                    alt="logo"
+                    width={70}
+                    height={70}
+                    style={{ display: "inline-block" }}
+                  />
+                </Typography>
               </Link>
             </Box>
             <Box sx={{ display: { xs: "none", sm: "block" } }}>
@@ -150,7 +160,7 @@ export default function DrawerAppBar(props: Props) {
             <Box
               sx={{
                 flexGrow: 1,
-                display: { xs: "flex", md: "none" },
+                display: { xs: "flex", sm: "none", md: "none" },
                 justifyContent: "center",
               }}
             >

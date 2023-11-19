@@ -1,10 +1,38 @@
 "use client";
 import { Grid, Box, Typography } from "@mui/material";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { useStyles } from "@styles/customStyledComponents";
+
 const Footer = () => {
+  const [logoSize, setLogoSize] = useState(230);
+
+  useEffect(() => {
+    const updateLogoSize = () => {
+      const screenWidth = window.innerWidth;
+      if (screenWidth < 320) {
+        setLogoSize(125);
+      } else if (screenWidth < 768) {
+        setLogoSize(165);
+      } else if (screenWidth < 1024) {
+        setLogoSize(200);
+      } else {
+        setLogoSize(230);
+      }
+    };
+
+    updateLogoSize();
+
+    // Update columns on window resize
+    window.addEventListener("resize", updateLogoSize);
+
+    return () => {
+      // Cleanup event listener
+      window.removeEventListener("resize", updateLogoSize);
+    };
+  }, []);
+
   const classes = useStyles();
   return (
     <Box
@@ -41,8 +69,8 @@ const Footer = () => {
           <Image
             src="/assets/images/logo2.svg"
             alt="Butterfly Effect Logo"
-            width={225}
-            height={225}
+            width={logoSize}
+            height={logoSize}
             className="object-contain"
           />
           <Typography
@@ -132,17 +160,40 @@ const Footer = () => {
             display="flex"
             justifyContent="space-between"
             pt={1}
-            px={4}
+            px={2}
             alignItems="center"
-            width="75%"
+            width="60%"
             sx={{
-              "@media (max-width: 350px)": {
-                width: "80%",
+              "@media (min-width: 2400px)": {
+                width: "70%",
+                paddingX: "40px",
+              },
+
+              "@media (min-width: 1800px)": {
+                width: "68%",
+                paddingX: "32px",
+              },
+
+              "@media (max-width: 1024px)": {
+                width: "64%",
+                paddingX: "20px",
+              },
+
+              "@media (max-width: 768px)": {
+                width: "67.5%",
+                paddingX: "16px",
+              },
+
+              "@media (max-width: 320px)": {
+                width: "70%",
                 paddingX: "0",
               },
             }}
           >
-            <button onClick={() => window.open("https://www.linkedin.com/")}>
+            <button
+              onClick={() => window.open("https://www.linkedin.com/")}
+              className="mx-2"
+            >
               <img
                 src="/assets/icons/linkedin.svg"
                 alt="linkedin icon svg"
@@ -150,7 +201,10 @@ const Footer = () => {
               />
             </button>
 
-            <button onClick={() => window.open("https://www.instagram.com/")}>
+            <button
+              onClick={() => window.open("https://www.instagram.com/")}
+              className="mx-2"
+            >
               <img
                 src="/assets/icons/instagram.svg"
                 alt="linkedin icon svg"
@@ -158,7 +212,10 @@ const Footer = () => {
               />
             </button>
 
-            <button onClick={() => window.open("https://www.facebook.com/")}>
+            <button
+              onClick={() => window.open("https://www.facebook.com/")}
+              className="mx-2"
+            >
               <img
                 src="/assets/icons/facebook.svg"
                 alt="linkedin icon svg"
@@ -166,7 +223,10 @@ const Footer = () => {
               />
             </button>
 
-            <button onClick={() => window.open("https://twitter.com/")}>
+            <button
+              onClick={() => window.open("https://twitter.com/")}
+              className="mx-2"
+            >
               <img
                 src="/assets/icons/twitter-X.svg"
                 alt="twitter new icon svg"

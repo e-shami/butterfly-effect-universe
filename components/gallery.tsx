@@ -84,12 +84,12 @@ interface ItemData {
 
 const itemData : ItemData[] = [
   {
-    img: "/assets/images/gallery/image1.png",
+    img: "/assets/images/gallery/image1.jpg",
     title: "Picture Title",
     description: "Picture Description",
   },
   {
-    img: "/assets/images/gallery/image2.png",
+    img: "/assets/images/gallery/image2.jpg",
     title: "Picture Title",
     description: "Picture Description",
   },
@@ -109,7 +109,7 @@ const itemData : ItemData[] = [
     description: "Picture Description",
   },
   {
-    img: "/assets/images/gallery/image6.webp",
+    img: "/assets/images/gallery/image6.jpg",
     title: "Picture Title",
     description: "Picture Description",
   },

@@ -15,8 +15,11 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import LaunchIcon from "@mui/icons-material/Launch";
 import Image from "next/image";
+import useScrollTrigger from '@mui/material/useScrollTrigger';
 import Container from "@mui/material/Container";
 import Link from "next/link";
+import Slide from '@mui/material/Slide';
+import { CssBaseline } from "@material-ui/core";
 
 interface Props {
   /**
@@ -24,6 +27,7 @@ interface Props {
    * You won't need it on your project.
    */
   window?: () => Window;
+  children?: React.ReactElement;
 }
 
 const drawerWidth = 240;
@@ -31,6 +35,7 @@ const navItems = [
   { navName: "Home", path: "/" },
   { navName: "About", path: "/#about" },
   { navName: "Contact Us", path: "/#contactUs" },
+
 ];
 
 export default function DrawerAppBar(props: Props) {
@@ -46,18 +51,6 @@ export default function DrawerAppBar(props: Props) {
       onClick={handleDrawerToggle}
       sx={{ textAlign: "center", marginTop: "5vh" }}
     >
-      {/* <Typography
-        variant="h6"
-        sx={{ my: 2, display: "flex", justifyContent: "center" }}
-      >
-        <Image
-          src="/assets/images/logo2.svg"
-          alt="logo"
-          width={40}
-          height={40}
-        />
-      </Typography>
-      <Divider /> */}
       <List>
         {navItems.map((item) => (
           <Link href={item?.path} key={item?.path} passHref={true}>
@@ -74,12 +67,28 @@ export default function DrawerAppBar(props: Props) {
       </List>
     </Box>
   );
+  function HideOnScroll(props: Props) {
+    const { children, window } = props;
+    // Note that you normally won't need to set the window ref as useScrollTrigger
+    // will default to window.
+    // This is only being set here because the demo is in an iframe.
+    const trigger = useScrollTrigger({
+      target: window ? window() : undefined,
+    });
+  
+    return (
+      <Slide appear={false} direction="down" in={!trigger}>
+        {children}
+      </Slide>
+    );
+  }
 
   const container =
     window !== undefined ? () => window().document.body : undefined;
 
   return (
     <>
+    <HideOnScroll {...props}>
       <AppBar
         component="nav"
         position="fixed"
@@ -94,6 +103,7 @@ export default function DrawerAppBar(props: Props) {
           },
         }}
       >
+        <CssBaseline />
         <Container maxWidth="xl" sx={{ backgroundColor: "transparent" }}>
           <Toolbar
             sx={{
@@ -209,6 +219,7 @@ export default function DrawerAppBar(props: Props) {
           </Toolbar>
         </Container>
       </AppBar>
+      </HideOnScroll>
       <nav>
         <Drawer
           container={container}

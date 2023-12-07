@@ -19,12 +19,15 @@ const ActionAreaCard = ({
   return(
     <Card
     sx={{
-      maxWidth: 435,
-      borderRadius: "8px",
-      borderBlockColor: "rgb(94, 234, 212)",
+      maxWidth: 450,
+      borderRadius: "0",
+      // borderBlockColor: "rgb(94, 234, 212)",
       borderWidth: "2.5px",
       borderStyle: "ridge",
       height: "100%",
+      pt: 1,
+      pl: 1,
+      pr: 1
     }}
   >
     <CardActionArea>
@@ -49,27 +52,21 @@ const ActionAreaCard = ({
       />
       <CardContent 
       className={classes.forText}
+      sx={{
+        p: 1,
+      }}
       >
         <Typography
-          gutterBottom
           variant="body2"
           style={{
-            fontFamily: "Roboto",
+            fontWeight: "600",
             color: "#526092",
+            textAlign: "center",
           }}
         >
           {item.title}
         </Typography>
-        
-        <Typography   
-        variant="caption"
-        style={{
-          fontFamily: "Roboto",
-          color: "#526092",
-        }}
-        >
-          {item.description}
-        </Typography>
+
       </CardContent>
     </CardActionArea>
   </Card>
@@ -85,32 +82,32 @@ interface ItemData {
 const itemData : ItemData[] = [
   {
     img: "/assets/images/gallery/image1.jpg",
-    title: "Picture Title",
+    title: "1",
     description: "Picture Description",
   },
   {
     img: "/assets/images/gallery/image2.jpg",
-    title: "Picture Title",
+    title: "2",
     description: "Picture Description",
   },
   {
     img: "/assets/images/gallery/image3.jpg",
-    title: "Picture Title",
+    title: "3",
     description: "Picture Description",
   },
   {
     img: "/assets/images/gallery/image4.jpg",
-    title: "Picture Title",
+    title: "4",
     description: "Picture Description",
   },
   {
     img: "/assets/images/gallery/image5.jpg",
-    title: "Picture Title",
+    title: "5",
     description: "Picture Description",
   },
   {
     img: "/assets/images/gallery/image6.jpg",
-    title: "Picture Title",
+    title: "6",
     description: "Picture Description",
   },
 

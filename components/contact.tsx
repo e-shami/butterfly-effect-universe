@@ -1,6 +1,6 @@
 "use client";
 
-import { Grid, TextField, Typography, Box, Link } from "@mui/material";
+import { Grid, TextField, Typography, Box, Link, CircularProgress } from "@mui/material";
 import PlaceIcon from "@mui/icons-material/Place";
 import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
@@ -27,7 +27,7 @@ const Contact = () => {
             justifyContent: "center",
             justifySelf: "center",
             backgroundColor: "rgba(255, 255, 255, 0.8)",
-            borderRadius: "10px",
+            borderRadius: "0",
             padding: "1rem",
             width: "100%",
             boxShadow: '0px 0px 10px 0px rgba(0,0,0,0.75)',
@@ -202,7 +202,7 @@ const Contact = () => {
           className={classes.forText}
           sx={{
             backgroundColor: "rgba(255, 255, 255, 0.8)",
-            borderRadius: "10px",
+            borderRadius: "0",
             padding: "2rem !important",
             width: "100%",
             display: "flex",    

@@ -1,16 +1,18 @@
 import { makeStyles } from "@material-ui/core";
-import contactImage from "../public/assets/images/contact.png";
+import contact from "../public/assets/images/contact.jpg";
 
 export const useStyles = makeStyles((theme) => ({
   root: {
-    backgroundImage: `url(${contactImage.src}) !important`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
     height: "100vh",
     display: "flex",
     justifyContent: "center",
     marginTop: theme.spacing(12),
     backgroundAttachment: "fixed",
+    position: "relative",
+    backgroundImage: `url(${contact.src}) !important`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
 
     "@media (max-width: 600px)": {
       height: "fit-content",
@@ -25,8 +27,13 @@ export const useStyles = makeStyles((theme) => ({
     width: "100%",
   },
   formField: {
-    // color: "#000",
     marginBottom: theme.spacing(2),
+    "& .css-md26zr-MuiInputBase-root-MuiOutlinedInput-root" : {
+      borderRadius: "0 !important",
+    },
+    "& .css-z1o969-MuiInputBase-root-MuiOutlinedInput-root" : {
+      borderRadius: "0 !important",
+    },
   },
 
   forText: {

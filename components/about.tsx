@@ -1,9 +1,12 @@
 "use client";
 
 import React from "react";
-import { Grid, Typography, Link, Divider } from "@mui/material";
+import { Grid, Typography, Divider } from "@mui/material";
 import { useStyles } from "@styles/customStyledComponents";
 import BioCard from "./Cards/card";
+import teamData from "./Team/team";
+import ControlledAccordions from "./visions/accordion";
+import InsetDividers, { InsetDividers2 } from "./visions/values";
 
 const AboutUs = () => {
   const classes = useStyles();
@@ -102,9 +105,8 @@ const AboutUs = () => {
           <iframe
             width="560"
             height="315"
-            src="https://www.youtube.com/embed/xlziG5d3k2I?si=oA9HAoDrGX9FdNxd"
+            src="https://www.youtube.com/embed/xlziG5d3k2I?si=oA9HAoDrGX9FdNxd&rel=0"
             title="YouTube video player"
-            // frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
             style={{
@@ -124,6 +126,7 @@ const AboutUs = () => {
           flexDirection={"column"}
           justifyContent="center"
           alignItems="left"
+          alignSelf={'flex-start'}
           sx={{
             paddingRight: "2rem",
             paddingTop: "2rem",
@@ -136,53 +139,71 @@ const AboutUs = () => {
             },
           }}
         >
-          <Typography
-            variant="h4"
-            sx={{
-              color: "#526092 !important",
-              textTransform: "uppercase",
-              fontWeight: "400 !important  ",
-              marginBottom: "2rem",
+          <ControlledAccordions />
+        </Grid>
+      </Grid>
 
-              "@media (max-width: 900px)": {
-                textAlign: "center",
-                marginBottom: "0.5rem",
-              },
-            }}
-          >
-            Our Mission
-          </Typography>
+      <Grid
+        item
+        xs={12}
+        sm={12}
+        md={12}
+        lg={12}
+        xl={12}
+        display="flex"
+        flexDirection={"column"}
+        justifyContent="center"
+        alignItems="left"
+        sx={{
+          "@media (max-width: 600px)": {
+            display: "flex",
+            justifyContent: "left",
+            alignItems: "left",
+            padding: "0",
+            paddingTop: "1rem",
+          },
+        }}
+      >
+        <Typography
+          variant="h4"
+          sx={{
+            color: "#526092 !important",
+            textTransform: "uppercase",
+            fontWeight: "400 !important  ",
+            marginBottom: "2rem",
+            marginTop: "2rem",
+            textAlign: "center",
 
-          <Typography
-            variant="body1"
-            sx={{
-              color: "#000",
-              paddingRight: "3rem",
-              "@media (max-width: 900px)": {
-                textAlign: "justify",
-                paddingRight: "0",
-              },
-              "@media (max-width: 600px)": {
-                paddingRight: "0",
-                textAlign: "justify",
-              },
-            }}
-          >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
-            voluptatibus, voluptatem, quia, doloribus laboriosam quidem
-            voluptatum quibusdam quae quod molestias voluptate? Quisquam
-            voluptate, quibusdam voluptas quod, quas, quia voluptatibus
-            voluptatem quos quae quidem. Quisquam, quae. Quisquam, quae.
-            Quisquam, quae. Quisquam, quae. Quisquam, quae. Quisquam, quae.
-          </Typography>
+            "@media (max-width: 900px)": {
+              marginTop: "2rem",
+            },
+          }}
+        >
+          Our Values
+        </Typography>
+        <Grid container sx={{
+          display: "flex",
+        }}>
+          <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
+        <InsetDividers />
+        </Grid>
+          <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
+        <InsetDividers2 />
         </Grid>
         </Grid>
-      <Grid item xs={12} sx={{ 
+      </Grid>
+      <Grid
+        item
+        id="team"
+        xs={12}
+        sx={{
           padding: "0 2rem",
 
           "@media (max-width: 600px)": {
             padding: "0 1rem",
-          },  }}>
+          },
+        }}
+      >
         <Typography
           variant="h4"
           sx={{
@@ -209,26 +230,37 @@ const AboutUs = () => {
           flexDirection: "row",
           justifyContent: "space-evenly",
           alignItems: "center",
-          // padding: "2.5rem 2rem",
-          
+
           "@media (max-width: 600px)": {
             flexDirection: "column",
-            // padding: "1rem",
           },
         }}
       >
-        <Grid item xs={12} sm={6} md={4} lg={3} xl={3}>
-          <BioCard role="PRESIDENT" />  
-        </Grid>
-        <Grid item xs={12} sm={6} md={4} lg={3} xl={3}>
-          <BioCard role="BOD" />  
-        </Grid>
-        <Grid item xs={12} sm={6} md={4} lg={3} xl={3}>
-          <BioCard role="MEMBER" />  
-        </Grid>
-        <Grid item xs={12} sm={6} md={4} lg={3} xl={3}>
-          <BioCard role="MEMBER" />
-        </Grid>
+        {teamData?.map((member) => (
+          <Grid
+            item
+            xs={12}
+            sm={6}
+            md={4}
+            lg={3}
+            xl={3}
+            sx={{
+              display: "flex",
+              alignSelf: "flex-start",
+            }}
+          >
+            <BioCard
+              sx={{
+                flexGrow: 1,
+              }}
+              key={member.name}
+              name={member.name}
+              bio={member.bio}
+              position={member.position}
+              img={member.img}
+            />
+          </Grid>
+        ))}
       </Grid>
     </Grid>
   );

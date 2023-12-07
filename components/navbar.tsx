@@ -15,10 +15,10 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import LaunchIcon from "@mui/icons-material/Launch";
 import Image from "next/image";
-import useScrollTrigger from '@mui/material/useScrollTrigger';
+import useScrollTrigger from "@mui/material/useScrollTrigger";
 import Container from "@mui/material/Container";
 import Link from "next/link";
-import Slide from '@mui/material/Slide';
+import Slide from "@mui/material/Slide";
 import { CssBaseline } from "@material-ui/core";
 
 interface Props {
@@ -35,7 +35,6 @@ const navItems = [
   { navName: "Home", path: "/" },
   { navName: "About", path: "/#about" },
   { navName: "Contact Us", path: "/#contactUs" },
-
 ];
 
 export default function DrawerAppBar(props: Props) {
@@ -75,7 +74,7 @@ export default function DrawerAppBar(props: Props) {
     const trigger = useScrollTrigger({
       target: window ? window() : undefined,
     });
-  
+
     return (
       <Slide appear={false} direction="down" in={!trigger}>
         {children}
@@ -87,138 +86,139 @@ export default function DrawerAppBar(props: Props) {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <>
-    <HideOnScroll {...props}>
-      <AppBar
-        component="nav"
-        position="fixed"
-        sx={{
-          backgroundColor: "rgba(255, 255, 255, 0.6)",
-          backdropFilter: "blur(5px)",
-          zIndex: 10,
-          padding: "0 20px",
+    <React.Fragment>
+      <CssBaseline />
+      <HideOnScroll {...props}>
+        <AppBar
+          component="nav"
+          position="fixed"
+          sx={{
+            backgroundColor: "rgba(255, 255, 255, 0.6)",
+            backdropFilter: "blur(5px)",
+            zIndex: 10,
+            padding: "0 20px",
 
-          "@media (max-width: 600px)": {
-            padding: "0",
-          },
-        }}
-      >
-        <CssBaseline />
-        <Container maxWidth="xl" sx={{ backgroundColor: "transparent" }}>
-          <Toolbar
-            sx={{
-              display: "flex",
-              justifyContent: "space-between",
-              backgroundColor: "transparent",
-              height: "70px",
-              "@media (max-width: 600px)": {
-                height: "30px",
-              },
-            }}
-          >
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              edge="start"
-              onClick={handleDrawerToggle}
-              sx={{ mr: 2, display: { sm: "none" }, color: "#14b8a6" }}
+            "@media (max-width: 600px)": {
+              padding: "0",
+            },
+          }}
+        >
+          <CssBaseline />
+          <Container maxWidth="xl" sx={{ backgroundColor: "transparent" }}>
+            <Toolbar
+              sx={{
+                display: "flex",
+                justifyContent: "space-between",
+                backgroundColor: "transparent",
+                height: "70px",
+                "@media (max-width: 600px)": {
+                  height: "30px",
+                },
+              }}
             >
-              <MenuIcon />
-            </IconButton>
-            <Box>
-              <Link href="/" passHref={true}>
-                <Typography
-                  sx={{
-                    flexGrow: 1,
-                    display: { xs: "none", sm: "block" },
+              <IconButton
+                color="inherit"
+                aria-label="open drawer"
+                edge="start"
+                onClick={handleDrawerToggle}
+                sx={{ mr: 2, display: { sm: "none" }, color: "#14b8a6" }}
+              >
+                <MenuIcon />
+              </IconButton>
+              <Box>
+                <Link href="/" passHref={true}>
+                  <Typography
+                    sx={{
+                      flexGrow: 1,
+                      display: { xs: "none", sm: "block" },
+                      cursor: "pointer",
+                    }}
+                  >
+                    <Image
+                      src="/assets/images/logo2.svg"
+                      alt="logo"
+                      width={70}
+                      height={70}
+                      style={{ display: "inline-block" }}
+                    />
+                  </Typography>
+                </Link>
+              </Box>
+              <Box sx={{ display: { xs: "none", sm: "block" } }}>
+                {navItems.map((item) => (
+                  <Link href={item?.path} key={item?.path} passHref={true}>
+                    <Button
+                      key={item?.path}
+                      sx={{
+                        color: "#526092",
+                        fontWeight: 600,
+                        paddingLeft: "15px",
+                        paddingRight: "15px",
+                        borderRadius: "0",
+                        borderBottom: "2px solid transparent",
+
+                        "&:hover": {
+                          borderBottom: "2px solid #526092",
+                        },
+                      }}
+                    >
+                      {item?.navName}
+                    </Button>
+                  </Link>
+                ))}
+              </Box>
+              <Box
+                sx={{
+                  flexGrow: 1,
+                  display: { xs: "flex", sm: "none", md: "none" },
+                  justifyContent: "center",
+                }}
+              >
+                <Link
+                  href="/"
+                  passHref={true}
+                  style={{
                     cursor: "pointer",
                   }}
                 >
                   <Image
                     src="/assets/images/logo2.svg"
-                    alt="logo"
-                    width={70}
-                    height={70}
-                    style={{ display: "inline-block" }}
+                    alt="Butterfly Effect Logo"
+                    width={60}
+                    height={60}
                   />
-                </Typography>
-              </Link>
-            </Box>
-            <Box sx={{ display: { xs: "none", sm: "block" } }}>
-              {navItems.map((item) => (
-                <Link href={item?.path} key={item?.path} passHref={true}>
-                  <Button
-                    key={item?.path}
-                    sx={{
-                      color: "#526092",
-                      fontWeight: 600,
-                      paddingLeft: "15px",
-                      paddingRight: "15px",
-                      borderRadius: "0",
-                      borderBottom: "2px solid transparent",
-
-                      "&:hover": {
-                        borderBottom: "2px solid #526092",
-                      },
-                    }}
-                  >
-                    {item?.navName}
-                  </Button>
                 </Link>
-              ))}
-            </Box>
-            <Box
-              sx={{
-                flexGrow: 1,
-                display: { xs: "flex", sm: "none", md: "none" },
-                justifyContent: "center",
-              }}
-            >
-              <Link
-                href="/"
-                passHref={true}
-                style={{
-                  cursor: "pointer",
-                }}
-              >
-                <Image
-                  src="/assets/images/logo2.svg"
-                  alt="Butterfly Effect Logo"
-                  width={60}
-                  height={60}
-                />
-              </Link>
-            </Box>
-            <Link href="/donate" className="font-medium">
-              <Button
-                endIcon={<LaunchIcon />}
-                sx={{
-                  color: "#fff",
-                  backgroundColor: "#526092 !important",
-                  fontWeight: 600,
-                  borderRadius: "0",
-                  border: "2px solid #526092",
-                  padding: "5px 20px",
-
-                  "&:hover": {
-                    backgroundColor: "#14b8a6 !important",
-                    border: "2px solid #14b8a6",
+              </Box>
+              <Link href="/donate" className="font-medium">
+                <Button
+                  endIcon={<LaunchIcon />}
+                  sx={{
                     color: "#fff",
-                    transitionDelay: "0.025s",
-                  },
+                    backgroundColor: "#526092 !important",
+                    fontWeight: 600,
+                    borderRadius: "0",
+                    border: "2px solid #526092",
+                    padding: "5px 20px",
 
-                  "@media (max-width: 600px)": {
-                    fontSize: "0.8rem",
-                    padding: "2px 8px",
-                  },
-                }}
-              >
-                Donate
-              </Button>
-            </Link>
-          </Toolbar>
-        </Container>
-      </AppBar>
+                    "&:hover": {
+                      backgroundColor: "#14b8a6 !important",
+                      border: "2px solid #14b8a6",
+                      color: "#fff",
+                      transitionDelay: "0.025s",
+                    },
+
+                    "@media (max-width: 600px)": {
+                      fontSize: "0.8rem",
+                      padding: "2px 8px",
+                    },
+                  }}
+                >
+                  Donate
+                </Button>
+              </Link>
+            </Toolbar>
+          </Container>
+        </AppBar>
       </HideOnScroll>
       <nav>
         <Drawer
@@ -243,6 +243,6 @@ export default function DrawerAppBar(props: Props) {
       <Box component="main">
         <Toolbar />
       </Box>
-    </>
+    </React.Fragment>
   );
 }

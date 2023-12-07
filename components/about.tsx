@@ -184,10 +184,17 @@ const AboutUs = () => {
         <Grid container sx={{
           display: "flex",
         }}>
-          <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
+          <Grid item xs={6} sm={6} md={6} lg={6} xl={6}
+            display={'flex'}
+            alignContent={'center'}
+            justifyContent={'center'}
+          >
         <InsetDividers />
         </Grid>
-          <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
+          <Grid item xs={6} sm={6} md={6} lg={6} xl={6}
+            display={'flex'}
+            alignContent={'center'}
+            justifyContent={'center'}>
         <InsetDividers2 />
         </Grid>
         </Grid>
@@ -225,8 +232,10 @@ const AboutUs = () => {
       <Grid
         container
         spacing={3}
+        display={'flex'}
+        alignContent={'center'}
+        justifyContent={'center'}
         sx={{
-          display: "flex",
           flexDirection: "row",
           justifyContent: "space-evenly",
           alignItems: "center",
@@ -244,8 +253,10 @@ const AboutUs = () => {
             md={4}
             lg={3}
             xl={3}
+            display={'flex'}
+            alignContent={'center'}
+            justifyContent={'center'}
             sx={{
-              display: "flex",
               alignSelf: "flex-start",
             }}
           >

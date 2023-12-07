@@ -19,7 +19,7 @@ import useScrollTrigger from "@mui/material/useScrollTrigger";
 import Container from "@mui/material/Container";
 import Link from "next/link";
 import Slide from "@mui/material/Slide";
-import { CssBaseline } from "@material-ui/core";
+import CssBaseline from '@mui/material/CssBaseline';
 
 interface Props {
   /**
@@ -27,9 +27,23 @@ interface Props {
    * You won't need it on your project.
    */
   window?: () => Window;
-  children?: React.ReactElement;
+  children?: React.ReactElement | any;
 }
+function HideOnScroll(props: Props) {
+  const { children, window } = props;
+  // Note that you normally won't need to set the window ref as useScrollTrigger
+  // will default to window.
+  // This is only being set here because the demo is in an iframe.
+  const trigger = useScrollTrigger({
+    target: window ? window() : undefined,
+  });
 
+  return (
+    <Slide appear={false} direction="down" in={!trigger}>
+      {children}
+    </Slide>
+  );
+}
 const drawerWidth = 240;
 const navItems = [
   { navName: "Home", path: "/" },
@@ -66,21 +80,7 @@ export default function DrawerAppBar(props: Props) {
       </List>
     </Box>
   );
-  function HideOnScroll(props: Props) {
-    const { children, window } = props;
-    // Note that you normally won't need to set the window ref as useScrollTrigger
-    // will default to window.
-    // This is only being set here because the demo is in an iframe.
-    const trigger = useScrollTrigger({
-      target: window ? window() : undefined,
-    });
-
-    return (
-      <Slide appear={false} direction="down" in={!trigger}>
-        {children}
-      </Slide>
-    );
-  }
+ 
 
   const container =
     window !== undefined ? () => window().document.body : undefined;

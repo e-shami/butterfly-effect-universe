@@ -14,7 +14,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
   const [loading, setLoading] = React.useState(false);
 
   React.useEffect(() => {
-    setTimeout(() => setLoading(true), 4000);
+    setTimeout(() => setLoading(true), 2000);
   });
   return (
     <html lang="en-US">

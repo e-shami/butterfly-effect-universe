@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import "@styles/global.css";
 import React, { Suspense } from "react";
 import Loader from "@components/loader";
@@ -14,7 +14,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
   const [loading, setLoading] = React.useState(false);
 
   React.useEffect(() => {
-    setTimeout(() => setLoading(true), 6000);
+    setTimeout(() => setLoading(true), 4000);
   });
   return (
     <html lang="en-US">
@@ -23,30 +23,30 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <link rel="icon" href="/assets/images/logo2.svg" />
       </head>
       <body>
-        <Suspense fallback={<Loader />}>
-          <Navbar />
-          <main
-            style={{
-              backgroundImage: `url("/assets/images/bg.jpg")`,
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-              backgroundAttachment: "fixed",
-              backgroundSize: "auto 100%",
-            }}
-          >
-            {!loading ? (
-              <Loader />
-            ) : (
+        {!loading ? (
+          <Loader />
+        ) : (
+          <Suspense fallback={<Loader />}>
+            <Navbar />
+            <main
+              style={{
+                backgroundImage: `url("/assets/images/bg.jpg")`,
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                backgroundAttachment: "fixed",
+                backgroundSize: "auto 100%",
+              }}
+            >
               <div
                 className="main"
                 style={{ position: "absolute", width: "auto" }}
               >
                 <div className="gradient" />
               </div>
-            )}
-            {children}
-          </main>
-        </Suspense>
+              {children}
+            </main>
+          </Suspense>
+        )}
       </body>
     </html>
   );

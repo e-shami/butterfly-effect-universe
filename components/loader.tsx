@@ -6,7 +6,13 @@ const Loader = () => {
         display="flex"
         justifyContent="center"
         alignItems="center"
-        sx={{ height: "100vh", width: "100%" }}>
+        sx={{ height: "100vh", width: "100%",
+        backgroundImage: `url("/assets/images/bg.jpg")`,
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed",
+        backgroundSize: "auto 100%",
+        }}>
       <CircularProgress />
     </Grid>
   );

@@ -14,11 +14,11 @@ const Footer = () => {
       if (screenWidth < 320) {
         setLogoSize(125);
       } else if (screenWidth < 768) {
-        setLogoSize(165);
+        setLogoSize(145);
       } else if (screenWidth < 1024) {
-        setLogoSize(200);
+        setLogoSize(160);
       } else {
-        setLogoSize(230);
+        setLogoSize(180);
       }
     };
 
@@ -56,6 +56,7 @@ const Footer = () => {
           xs={12}
           lg={4}
           container
+          display={'flex'}
           justifyContent="center"
           alignItems="center"
           px={1}
@@ -79,12 +80,13 @@ const Footer = () => {
             gutterBottom
             mt={2}
             sx={{
+
+              textAlign: "left",
               "@media (max-width: 600px)": {
-                textAlign: "center",
               },
             }}
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed.
+            Experiential education program to nurture environmental awareness via butterfly conservatory.
           </Typography>
         </Grid>
 
@@ -99,40 +101,40 @@ const Footer = () => {
           mt={2}
         >
           <div>
-            <Link href="#" passHref>
+            <Link href="#about" passHref>
               <Typography variant="h5" fontWeight={600}>
                 About Us
               </Typography>
             </Link>
 
             <div className="flex flex-col mt-2 lg:mt-6 space-y-2">
-              <Link href="#" passHref>
+              <Link href="#about" passHref>
                 <Typography variant="body1">Vision</Typography>
               </Link>
-              <Link href="#" passHref>
+              <Link href="#about" passHref>
                 <Typography variant="body1">Mission</Typography>
               </Link>
-              <Link href="#" passHref>
+              <Link href="#team" passHref>
                 <Typography variant="body1">Members</Typography>
               </Link>
             </div>
           </div>
 
           <div>
-            <Link href="#" passHref>
+            <Link href="#contactUs" passHref>
               <Typography variant="h5" fontWeight={600}>
                 Contact Us
               </Typography>
             </Link>
 
             <div className="flex flex-col mt-2 lg:mt-6 space-y-2">
-              <Link href="#" passHref>
+              <Link href="#contactUs" passHref>
                 <Typography variant="body1">Phone</Typography>
               </Link>
-              <Link href="#" passHref>
+              <Link href="#contactUs" passHref>
                 <Typography variant="body1">Email</Typography>
               </Link>
-              <Link href="#" passHref>
+              <Link href="#contactUs" passHref>
                 <Typography variant="body1">Message</Typography>
               </Link>
             </div>

@@ -9,7 +9,6 @@ const Hero = () => {
     backgroundImage: `url(${lib6.src}) !important`,
     backgroundSize: "cover",
     backgroundPosition: "center",
-    // backgroundAttachment: "fixed",
     backgroundRepeat: "no-repeat",
     height: "100vh",
     backgroundPositionY: "bottom",
@@ -23,7 +22,7 @@ const Hero = () => {
     borderRadius: "0",
     padding: "2.5rem",
     border: "1px solid #14b8a6",
-    background: "rgba(0,0,0,0.3)",
+    background: "rgba(0,0,0,0.4)",
     boxShadow: "0px 0px 6px 1px rgba(0,0,0,0.75)",
 
     "@media (max-width: 600px)": {
@@ -34,8 +33,7 @@ const Hero = () => {
 
   const heroTextStyle = {
     color: "white",
-    textAlign: "left",
-
+    textAlign: "justify",
   };
 
   const heroH1Style = {
@@ -78,14 +76,16 @@ const Hero = () => {
               Butterfly effect Universe
             </Typography>
             <Typography variant="body1" sx={heroTextStyle}>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid
-              sed totam quibusdam molestiae eius ullam iste necessitatibus
-              quidem perferendis autem veritatis libero nesciunt nihil non,
-              inventore fuga, ipsam voluptates illum. Lorem ipsum, dolor sit
-              amet consectetur adipisicing elit. Aliquid sed totam quibusdam
-              molestiae eius ullam iste necessitatibus quidem perferendis autem
-              veritatis libero nesciunt nihil non, inventore fuga, ipsam
-              voluptates illum.
+              Experiential education program to nurture environmental awareness
+              via butterfly conservatory - imparting education on the complexity
+              of butterfly ecosystem as a means to providing palpable sense of
+              interdependence of Earth's biosphere. Currently, in the process of
+              establishing a state-of-the-art facility in Pakistan dubbed
+              "Butterfly Effect Universe", with the ambition to showcase the
+              concept on an international scale. The ultimate goal is to create
+              a series of conservatories with the intent of sensitizing our
+              community to the critical issues of climate change and potential
+              remedies.
             </Typography>
           </Paper>
         </Grid>

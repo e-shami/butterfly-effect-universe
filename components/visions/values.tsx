@@ -11,7 +11,11 @@ export default function InsetDividers() {
         width: '100%',
         maxWidth: '50vw',
         bgcolor: 'none',
-        p: 1
+        p: 1,
+
+        "& .MuiTypography-body1" : {
+          color: "#14b8a6"
+        }
       }}
     >
       <ListItem>
@@ -43,7 +47,10 @@ export function InsetDividers2() {
         width: '100%',
         maxWidth: '50vw',
         bgcolor: 'none',
-        p: 1
+        p: 1,
+        "& .MuiTypography-body1" : {
+          color: "#14b8a6"
+        }
       }}
     >
       <ListItem>

@@ -28,7 +28,6 @@ export default function BioCard(props: any) {
           width: 320,
           maxWidth: "100%",
           boxShadow: "lg",
-          height: "50vh",
           borderRadius: "0",
           flexGrow: 1,
 
@@ -107,7 +106,6 @@ export default function BioCard(props: any) {
               justifyContent: "center",
               alignItems: "center",
               transitionDelay: "0.025s",
-
             }}
           >
             {"Learn More"}
@@ -119,34 +117,47 @@ export default function BioCard(props: any) {
         aria-describedby="modal-desc"
         open={open}
         onClose={() => setOpen(false)}
-        sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
+        sx={{
+          position:'absolute',
+          top:'15%',
+          left:'5%',
+          overflow:'scroll',
+          height:'90%',
+          display:'block'
+        }}
       >
         <Sheet
           variant="outlined"
           sx={{
             maxWidth: "90vw",
+            height: "90vh",
             borderRadius: "0",
             boxShadow: "lg",
+            overflow: "scroll",
           }}
         >
           <ModalClose variant="plain" sx={{ m: 1 }} />
           <Grid container>
             <Grid
               item
-              xs={3}
+              xs={12}
+              sm={12}
+              md={3}
+              lg={3}
+              xl={3}
               sx={{
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
                 flexDirection: "column",
-                p: 3
+                p: 3,
               }}
             >
               <Image
                 src={props?.img}
                 alt={props?.name}
-                width={220}
-                height={220}
+                width={250}
+                height={250}
                 objectFit="contain"
               />
               <Typography
@@ -172,13 +183,19 @@ export default function BioCard(props: any) {
                 {props?.bio}
               </Typography>
             </Grid>
-            <Grid item xs={9}
+            <Grid
+              item
+              xs={12}
+              sm={12}
+              md={9}
+              lg={9}
+              xl={9}
               sx={{
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
                 flexDirection: "column",
-                p: 3
+                p: 3,
               }}
             >
               <Typography
@@ -193,7 +210,7 @@ export default function BioCard(props: any) {
                   textAlign: "center",
                 }}
               >
-                History
+                About {props?.name}
               </Typography>
               <List>
                 {props?.history?.map((item: any) => (
@@ -204,20 +221,35 @@ export default function BioCard(props: any) {
                       alignItems: "baseline",
                     }}
                   >
-                      <CircleIcon
-                        sx={{
-                          fontSize: "5px",
-                          color: "#14b8a6",
-                          marginRight: "5px",
-                        }}
-                      />
-                    <Typography>
-                      {item}
-                    </Typography>
+                    <CircleIcon
+                      sx={{
+                        fontSize: "5px",
+                        color: "#14b8a6",
+                        marginRight: "5px",
+                      }}
+                    />
+                    <Typography>{item}</Typography>
                   </ListItem>
                 ))}
               </List>
             </Grid>
+            <Grid
+              item
+              xs={12}
+              sm={12}
+              md={12}
+              lg={12}
+              xl={12}
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                flexDirection: "column",
+                pb: 1
+              }}  
+              >
+                <Image src={'/assets/images/logo2.svg'} alt={"Butterfly Effect Logo"} width={30} height={30} objectFit="contain" />
+              </Grid>
           </Grid>
         </Sheet>
       </Modal>

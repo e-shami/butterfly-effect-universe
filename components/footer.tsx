@@ -215,7 +215,7 @@ const Footer = () => {
             </button>
 
             <button
-              onClick={() => window.open("https://www.facebook.com/")}
+              onClick={() => window.open("https://www.facebook.com/profile.php?id=61551755253754&mibextid=ZbWKwL")}
               className="mx-2"
             >
               <img
@@ -226,7 +226,7 @@ const Footer = () => {
             </button>
 
             <button
-              onClick={() => window.open("https://twitter.com/")}
+              onClick={() => window.open("https://x.com/b_e_universe?t=qozDjXoPnAvN0MUwlaYaWg&s=08")}
               className="mx-2"
             >
               <img

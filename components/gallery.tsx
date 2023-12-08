@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import "@styles/global.css";
 import { Grid, Typography } from "@mui/material";
 import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import { CardActionArea, ImageList, ImageListItem } from "@mui/material";
 import { useStyles } from "@styles/customStyledComponents";   
@@ -14,20 +13,16 @@ const ActionAreaCard = ({
 }: {
   item: { img: string; title: string; description: string };
 }) => {
-  const classes = useStyles();
 
   return(
     <Card
     sx={{
       maxWidth: 450,
       borderRadius: "0",
-      // borderBlockColor: "rgb(94, 234, 212)",
       borderWidth: "2.5px",
       borderStyle: "ridge",
       height: "100%",
-      pt: 1,
-      pl: 1,
-      pr: 1
+      p: 1,
     }}
   >
     <CardActionArea>
@@ -50,24 +45,6 @@ const ActionAreaCard = ({
           }
         }}
       />
-      <CardContent 
-      className={classes.forText}
-      sx={{
-        p: 1,
-      }}
-      >
-        <Typography
-          variant="body2"
-          style={{
-            fontWeight: "600",
-            color: "#526092",
-            textAlign: "center",
-          }}
-        >
-          {item.title}
-        </Typography>
-
-      </CardContent>
     </CardActionArea>
   </Card>
   )

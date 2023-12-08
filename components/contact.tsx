@@ -18,8 +18,8 @@ const Contact = () => {
           item
           xs={12}
           sm={8}
-          md={4}
-          lg={3}
+          md={5}
+          lg={4}
           className={classes.forText}
           sx={{
             display: "flex",
@@ -29,7 +29,7 @@ const Contact = () => {
             backgroundColor: "rgba(255, 255, 255, 0.8)",
             borderRadius: "0",
             padding: "1rem",
-            width: "100%",
+            width: "max-content",
             boxShadow: '0px 0px 10px 0px rgba(0,0,0,0.75)',
             height: 'fit-content',
 
@@ -71,7 +71,7 @@ const Contact = () => {
                 Location
               </Typography>
               <Typography variant="body1" gutterBottom>
-                123 Main Street
+                Islamabad Pakistan
               </Typography>
             </Box>
           </Box>
@@ -188,7 +188,7 @@ const Contact = () => {
                 Website
               </Typography>
               <Typography variant="body1" gutterBottom>
-                www.abc.com
+                butterflyeffectuniverse.org
               </Typography>
             </Box>
           </Box>

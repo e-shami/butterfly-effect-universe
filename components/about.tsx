@@ -267,6 +267,7 @@ const AboutUs = () => {
               key={member.name}
               name={member.name}
               bio={member.bio}
+              history={member.history}
               position={member.position}
               img={member.img}
             />

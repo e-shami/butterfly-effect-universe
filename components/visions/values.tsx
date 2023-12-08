@@ -9,8 +9,13 @@ export default function InsetDividers() {
     <List
       sx={{
         width: '100%',
-        maxWidth: '35vw',
+        maxWidth: '50vw',
         bgcolor: 'none',
+        p: 1,
+
+        "& .MuiTypography-body1" : {
+          color: "#14b8a6"
+        }
       }}
     >
       <ListItem>
@@ -40,8 +45,12 @@ export function InsetDividers2() {
     <List
       sx={{
         width: '100%',
-        maxWidth: '35vw',
+        maxWidth: '50vw',
         bgcolor: 'none',
+        p: 1,
+        "& .MuiTypography-body1" : {
+          color: "#14b8a6"
+        }
       }}
     >
       <ListItem>

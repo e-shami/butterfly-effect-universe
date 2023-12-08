@@ -71,7 +71,7 @@ const Contact = () => {
                 Location
               </Typography>
               <Typography variant="body1" gutterBottom>
-                123 Main Street
+                Islamabad Pakistan
               </Typography>
             </Box>
           </Box>
@@ -188,7 +188,7 @@ const Contact = () => {
                 Website
               </Typography>
               <Typography variant="body1" gutterBottom>
-                www.abc.com
+                www.butterflyeffectuniverse.org
               </Typography>
             </Box>
           </Box>

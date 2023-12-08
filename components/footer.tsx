@@ -193,7 +193,7 @@ const Footer = () => {
             }}
           >
             <button
-              onClick={() => window.open("https://www.linkedin.com/")}
+              onClick={() => window.open("https://www.linkedin.com/company/butterfly-effect-universe/about/")}
               className="mx-2"
             >
               <img
@@ -204,7 +204,7 @@ const Footer = () => {
             </button>
 
             <button
-              onClick={() => window.open("https://www.instagram.com/")}
+              onClick={() => window.open("https://www.instagram.com/butterflyeffectuniverse/")}
               className="mx-2"
             >
               <img

@@ -4,7 +4,6 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { Grid } from "@material-ui/core";
 import { useStyles } from "@styles/customStyledComponents";
 
 export default function ControlledAccordions() {
@@ -22,7 +21,6 @@ export default function ControlledAccordions() {
           borderRadius: "0",
           boxShadow: "none",
           borderBottom: "0",
-          marginRight: 2,
         }}
         expanded={expanded === "panel1"}
         onChange={handleChange("panel1")}
@@ -33,7 +31,7 @@ export default function ControlledAccordions() {
           id="panel1bh-header"
         >
           <Typography variant="h6" sx={{ width: "100%", flexShrink: 0, color: "#526092 !important" }}>
-            VISION STATEMENT
+            OUR VISION
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
@@ -54,7 +52,6 @@ export default function ControlledAccordions() {
           borderRadius: "0",
           boxShadow: "none",
           borderBottom: "0",
-          marginRight: 2,
         }}
         expanded={expanded === "panel2"}
         onChange={handleChange("panel2")}
@@ -65,7 +62,7 @@ export default function ControlledAccordions() {
           id="panel2bh-header"
         >
           <Typography variant="h6" sx={{ width: "100%", flexShrink: 0, color: "#526092 !important" }}>
-            MISSION STATEMENT
+            OUR MISSION
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
@@ -87,7 +84,6 @@ export default function ControlledAccordions() {
           borderRadius: "0",
           boxShadow: "none",
           borderBottom: "0",
-          marginRight: 2,
         }}
         expanded={expanded === "panel3"}
         onChange={handleChange("panel3")}
@@ -98,7 +94,7 @@ export default function ControlledAccordions() {
           id="panel3bh-header"
         >
           <Typography variant="h6" sx={{ width: "100%", flexShrink: 0, color: "#526092 !important" }}>
-            THE EDUCATIONAL VISION
+            OUR EDUCATIONAL VISION
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
@@ -121,7 +117,6 @@ export default function ControlledAccordions() {
           borderRadius: "0",
           boxShadow: "none",
           borderBottom: "0",
-          marginRight: 2,
         }}
         expanded={expanded === "panel4"}
         onChange={handleChange("panel4")}
@@ -132,7 +127,7 @@ export default function ControlledAccordions() {
           id="panel4bh-header"
         >
           <Typography variant="h6" sx={{ width: "100%", flexShrink: 0, color: "#526092 !important" }}>
-            THE ARCHITECTURAL VISION{" "}
+            OUR ARCHITECTURAL VISION{" "}
           </Typography>
         </AccordionSummary>
         <AccordionDetails>

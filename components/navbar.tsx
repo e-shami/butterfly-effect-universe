@@ -189,7 +189,7 @@ export default function DrawerAppBar(props: Props) {
                   />
                 </Link>
               </Box>
-              <Link href="/donate" className="font-medium">
+              <Link href="#contactUs" className="font-medium">
                 <Button
                   endIcon={<LaunchIcon />}
                   sx={{
